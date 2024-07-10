@@ -3,116 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
-    <title>Registro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Booking</title>
 </head>
 <body>
-    <div class="registro-container">
-        <div class="logo-section">
-            <!-- Imagen del logo con una anchura de 100px -->
-            <img src="/Proyecto1/Images/logo.jpg" alt="logo" width="100">
-            <!-- Título de la página -->
-            <h1>AVENTONES</h1>
-        </div>
+    <!-- Imagen del logo centrada con una anchura de 500px -->
+    <img src="/Proyecto1/Images/logoAventone.jpg" alt="logo" width="500" class="centered-logo">
     
-        <!-- Título de la sección de registro de usuario con un tamaño de fuente de 75px -->
-        <h2 class="another-style" style="font-size: 75px;">User Registration</h2>
-        <div class="regis">
-            <!-- Formulario de registro -->
-            <div class="form-row">
-                <div class="form-group">
-                    <!-- Campo para el nombre -->
-                    <label for="FirstName">First Name:</label>
-                    <input type="text" id="FirstName" name="FirstName">
-                </div>
-                <div class="form-group">
-                    <!-- Campo para el apellido -->
-                    <label for="LastName">Last Name:</label>
-                    <input type="text" id="LastName" name="LastName">
-                </div>
-            </div>
-            <div class="form-group">
-                <!-- Campo para el correo electrónico -->
-                <label for="Email">Email:</label>
-                <input type="email" id="Email">
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <!-- Campo para la contraseña -->
-                    <label for="Password">Password:</label>
-                    <input type="text" id="Password" name="Password">
-                </div>
-                <div class="form-group">
-                    <!-- Campo para repetir la contraseña -->
-                    <label for="RepeatPassword">Repeat Password:</label>
-                    <input type="text" id="RepeatPassword" name="RepeatPassword">
-                </div>
-            </div>
-            <div>
-                <div class="form-group">
-                    <!-- Campo para la dirección -->
-                    <label for="Address">Address:</label>
-                    <input type="text" id="Address">
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <!-- Campo para el país con un menú desplegable de opciones -->
-                        <label for="Country">Country:</label>
-                        <select id="Country" name="Country">
-                            <option value="cr">Costa Rica</option>
-                            <option value="ar">Argentina</option>
-                            <option value="bo">Bolivia</option>
-                            <option value="br">Brasil</option>
-                            <option value="cl">Chile</option>
-                            <option value="co">Colombia</option>
-                            <option value="cu">Cuba</option>
-                            <option value="do">República Dominicana</option>
-                            <option value="ec">Ecuador</option>
-                            <option value="sv">El Salvador</option>
-                            <option value="gt">Guatemala</option>
-                            <option value="ht">Haití</option>
-                            <option value="hn">Honduras</option>
-                            <option value="mx">México</option>
-                            <option value="ni">Nicaragua</option>
-                            <option value="pa">Panamá</option>
-                            <option value="py">Paraguay</option>
-                            <option value="pe">Perú</option>
-                            <option value="pr">Puerto Rico</option>
-                            <option value="uy">Uruguay</option>
-                            <option value="ve">Venezuela</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <!-- Campo para el estado -->
-                        <label for="State">State:</label>
-                        <input type="text" id="State" name="State">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <!-- Campo para la ciudad -->
-                        <label for="City">City:</label>
-                        <input type="text" id="City" name="City">
-                    </div>
-                    <div class="form-group">
-                        <!-- Campo para el número de teléfono -->
-                        <label for="PhoneNumber">Phone Number:</label>
-                        <input type="text" id="PhoneNumber" name="PhoneNumber">
-                    </div>
-                </div>
-
-                <!-- Enlaces de navegación para usuarios registrados y conductores -->
-                <nav>  
-                    <div class="form-row links">
-                        <span class="link-item">Already a User <a href="/Proyecto1/Login.html" class="link-group">Login Here</a></span>
-                        <span class="link-item">Register as Driver? <a href="/Proyecto1/Login.html" class="link-group">Click here</a></span>
-                    </div>
-                    <!-- Botón de registro -->
-                    <a href="/Proyecto1/Login.html" target="_blank" class="buttonSingUp">Sign Up</a>
-                </nav>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <a href="/Proyecto1/SearchHome.html" class="nav-link">Home</a>
+        <a href="/Proyecto1/AddRides.html"  class="nav-link">Rides</a>
+        <a href="/Proyecto1/Booking.html"  class="nav-link">Booking</a>
+        
+        <!-- Campo de búsqueda -->
+        <input type="text" class="search-input" placeholder="Search...">
+        
+        <!-- Icono de perfil con un menú desplegable -->
+        <div class="icon-wrapper" tabindex="0">
+            <i class="fas fa-user" id="profile-icon"></i>
+            <div class="dropdown-menu">
+                <a href="/Proyecto1/EdditProfile.html" class="dropdown-item">Settings</a>
+                <a href="/Proyecto1/Login.html" class="dropdown-item">Logout</a>
             </div>
         </div>
+    </nav>
+
+    <!-- Título de la sección de reservas con un tamaño de fuente de 75px -->
+    <h2 class="another-style" style="font-size: 75px;">Bookings</h2>
+
+    <div class="home-container">
+        <!-- Tabla de rides -->
+        <table class="rides-table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Ride</th>
+                    <th>Accept/Reject</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="User">Daniela Pereira</td>
+                    <td data-label="Ride">Ciudad Quesada-Zarcero</td>                   
+                    <td data-label="Accept/Reject"><a href="/Proyecto1/AddRides.html">Accept</a> | <a href="#">Reject</a></td>
+                </tr>
+                <tr>
+                    <td data-label="User">Juan Lopez</td>
+                    <td data-label="Ride">Ciudad Quesada-Pital</td>                   
+                    <td data-label="Accept/Reject"><a href="/Proyecto1/AddRides.html">Accept</a> | <a href="#">Reject</a></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+
     <hr>
     <!-- Pie de página con enlaces de navegación -->
     <footer class="footer">

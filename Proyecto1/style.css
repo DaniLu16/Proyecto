@@ -123,7 +123,7 @@ body{
     border-radius: 10px; /* Borde redondeado */
     width: 150px;
     background-color:dodgerblue;
-    font-size: 20px; /* Tamaño de la letra */
+    font-size: 30px; /* Tamaño de la letra */
     text-decoration: none; /* Elimina línea de enlace */
     font-family: Calibri;
     text-align: center;
@@ -133,6 +133,8 @@ body{
     justify-content: center; /* Centrar horizontalmente los elementos */
     transition: transform 0.2s, box-shadow 0.2s; /* Transiciones suaves */
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+    justify-content: space-between;
+    justify-content: center;
 
 
 
@@ -152,6 +154,7 @@ body{
     justify-content: center; /* Centrar horizontalmente los elementos */
     transition: transform 0.2s, box-shadow 0.2s; /* Transiciones suaves */
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+
 
 
 
@@ -204,7 +207,6 @@ body{
     text-decoration: none; /* Elimina línea de enlace */
     font-family: Calibri;
     text-align: right;
-    color: dodgerblue;
     display: flex; /* Usar flexbox para alinear elementos */
     margin: 100px auto;
     justify-content: center; /* Centrar horizontalmente los elementos */
@@ -329,20 +331,22 @@ footer p a {
     border-radius: 8px; /* Bordes redondeados */
 }
 
-/* Enlaces de navegación */
+/* Estilo para los enlaces de navegación */
 .nav-link {
     color: #333; /* Color del texto de los enlaces */
     text-decoration: none; /* Sin subrayado en los enlaces */
     padding: 10px; /* Relleno interior */
     font-size: 40px; /* Tamaño de la fuente de los enlaces */
     margin: 0; /* Eliminar márgenes exteriores */
+    transition: color 0.3s ease; /* Transición suave del color */
 }
 
 /* Estilo al hacer hover o enfoque en los enlaces de navegación */
-.nav-link:hover, .nav-link:focus {
-    background-color: #007BFF; /* Color de fondo al hacer hover o enfoque */
-    color: #fff; /* Color del texto al hacer hover o enfoque */
+.nav-link:hover, .nav-link:focus, .nav-link:active {
+    background-color: #007BFF; /* Color de fondo al hacer hover, enfoque o activo */
+    color: #fff; /* Color del texto al hacer hover, enfoque o activo */
 }
+
 
 /* Estilo para el input de búsqueda */
 .search-input {
@@ -590,7 +594,7 @@ footer p a {
     background-color: #f9f9f9; /* Color de fondo */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
     text-align: center; /* Alineación del texto al centro */
-    max-width: 1600px; /* Ancho máximo */
+    max-width: 1px; /* Ancho máximo */
 }
 
 /* Hacer la tabla responsiva */
