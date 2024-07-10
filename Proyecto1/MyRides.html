@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>My Rides</title>
+</head>
+<body>
+    <!-- Imagen del logo centrada -->
+    <img src="/Proyecto1/Images/logoAventone.jpg" alt="logo" width="500" class="centered-logo">
+
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <!-- Enlaces de navegación -->
+        <a href="/Proyecto1/SearchHome.html" target="_blank" class="nav-link">Home</a>
+        <a href="/Proyecto1/AddRides.html" target="_blank" class="nav-link">Rides</a>
+        <a href="/Proyecto1/Booking.html" target="_blank" class="nav-link">Booking</a>
+        <!-- Campo de búsqueda -->
+        <input type="text" class="search-input" placeholder="Search...">
+        <!-- Icono de perfil y menú desplegable -->
+        <div class="icon-wrapper" tabindex="0">
+            <i class="fas fa-user" id="profile-icon"></i>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">Settings</a>
+                <a href="#" class="dropdown-item">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Título principal -->
+    <h2 class="another-style" style="font-size: 75px;">My Rides</h2>
+
+    <!-- Botón para agregar un nuevo ride -->
+    <a href="/Proyecto1/AddRides.html" target="_blank" class="new-ride2-btn">New ride</a>
+   
+    <div class="home-container">
+        <!-- Tabla de rides -->
+        <table class="rides-table">
+            <thead>
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Seats</th>
+                    <th>Car</th>
+                    <th>Free</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="From">New York</td>
+                    <td data-label="To">Boston</td>
+                    <td data-label="Seats">3</td>
+                    <td data-label="Car">Toyota Camry</td>
+                    <td data-label="Free">Yes</td>
+                    <td data-label="Actions"><a href="/Proyecto1/AddRides.html">Edit</a> | <a href="#">Delete</a></td>
+                </tr>
+                <tr>
+                    <td data-label="From">Los Angeles</td>
+                    <td data-label="To">San Francisco</td>
+                    <td data-label="Seats">2</td>
+                    <td data-label="Car">Honda Civic</td>
+                    <td data-label="Free">No</td>
+                    <td data-label="Actions"><a href="/Proyecto1/AddRides.html">Edit</a> | <a href="#">Delete</a></td>
+                </tr>
+                <tr>
+                    <td data-label="From">Costa Rica</td>
+                    <td data-label="To">San Jose</td>
+                    <td data-label="Seats">3</td>
+                    <td data-label="Car">Hyundai</td>
+                    <td data-label="Free">No</td>
+                    <td data-label="Actions"><a href="/Proyecto1/AddRides.html">Edit</a> | <a href="#">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p>
+            <!-- Enlaces de navegación en el pie de página -->
+            <a href="/Proyecto1/SearchHome.html" target="_blank">Home</a> | 
+            <a href="/Proyecto1/MyRides.html" target="_blank">Rides</a> | 
+            <a href="/Proyecto1/Booking.html" target="_blank">Booking</a> | 
+            <a href="/Proyecto1/EdditProfile.html" target="_blank">Settings</a> | 
+            <a href="/Proyecto1/Login.html" target="_blank">Login</a> | 
+            <a href="/Proyecto1/Registration/Registro.html" target="_blank">Register</a>
+        </p>
+        <!-- Derechos de autor -->
+        <p>&copy; Aventones.com</p>
+    </footer>
+</body>
+</html>

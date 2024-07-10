@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+<body>
+    <!-- Imagen del logo centrada -->
+    <img src="/Proyecto1/Images/logoAventone.jpg" alt="logo" width="500" class="centered-logo">
+    
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <!-- Enlaces de navegación -->
+        <a href="/Proyecto1/SearchHome.html" target="_blank" class="nav-link">Home</a>
+        <a href="/Proyecto1/AddRides.html" target="_blank" class="nav-link">Rides</a>
+        <a href="/Proyecto1/Booking.html" target="_blank" class="nav-link">Booking</a>
+        <!-- Campo de búsqueda -->
+        <input type="text" class="search-input" placeholder="Search...">
+        <!-- Icono de perfil y menú desplegable -->
+        <div class="icon-wrapper" tabindex="0">
+            <i class="fas fa-user" id="profile-icon"></i>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">Settings</a>
+                <a href="#" class="dropdown-item">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Título principal -->
+    <h2 class="another-style" style="font-size: 75px;">Search Rides</h2>
+
+    <!-- Formulario de búsqueda de rides -->
+    <div class="ride-info-box">
+        <div class="form-row">
+            <div class="form-group">                      
+                <label for="from">From</label>
+                <select id="from" name="from" required>
+                    <option value="">Select Origin</option>
+                    <option value="ciudad quesda">Ciudad Quesada</option>
+                    <option value="venecia">Venecia</option>
+                    <option value="zarcero">Zarcero</option>
+                    <option value="rio cuarto">Rio Cuarto</option>
+                </select>
+            </div>
+            <div class="form-group">                      
+                <label for="to">To</label>
+                <select id="to" name="to" required>
+                    <option value="">Select Destination</option>
+                    <option value="rio cuarto">Rio Cuarto</option>
+                    <option value="ciudad quesda">Ciudad Quesada</option>
+                    <option value="venecia">Venecia</option>
+                    <option value="zarcero">Zarcero</option>
+                </select>
+            </div>
+
+           
+            <!-- Sección de selección de días -->
+            <div class="form-group">
+                <label>Days</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="mon" name="days" value="mon" checked>
+                    <label for="mon">Mon</label>
+                    <input type="checkbox" id="tue" name="days" value="tue" checked>
+                    <label for="tue">Tue</label>
+                    <input type="checkbox" id="wed" name="days" value="wed" checked>
+                    <label for="wed">Wed</label>
+                    <input type="checkbox" id="thu" name="days" value="thu" checked>
+                    <label for="thu">Thu</label>
+                    <input type="checkbox" id="fri" name="days" value="fri" checked>
+                    <label for="fri">Fri</label>
+                    <input type="checkbox" id="sat" name="days" value="sat">
+                    <label for="sat">Sat</label>
+                    <input type="checkbox" id="sun" name="days" value="sun">
+                    <label for="sun">Sun</label>
+                </div>
+            </div>
+             <!-- Botón para buscar rides -->
+             <a href="#" class="buttonLogin">Find Rides</a>
+
+        </div>
+    </div>
+
+    <!-- Texto informativo de rides encontrados -->
+    <p><strong>Rides found from <span style="font-weight: normal;">Ciudad Quesada</span> to <span style="font-weight: normal;">Rio Cuarto</span></strong></p>
+
+    <!-- Tabla de rides -->
+    <table class="rides-table">
+        <thead>
+            <tr>
+                <th>Driver</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Seats</th>
+                <th>Car</th>
+                <th>Fee</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Driver">dpereira</td>
+                <td data-label="From">Rio Cuarto</td>
+                <td data-label="To">Alajuela</td>
+                <td data-label="Seats">2</td>
+                <td data-label="Car">Nissan 2019</td>
+                <td data-label="Fee">$5</td>
+                <td data-label="Actions"><a href="/Proyecto1/EdditRide.html">Request</a></td>
+            </tr>
+            <tr>
+                <td data-label="Driver">lgomez</td>
+                <td data-label="From">Rio Cuarto</td>
+                <td data-label="To">Alajuela</td>
+                <td data-label="Seats">5</td>
+                <td data-label="Car">Jeep 2024</td>
+                <td data-label="Fee">$7</td>
+                <td data-label="Actions"><a href="/Proyecto1/EdditRide.html">Request</a></td>
+            </tr>
+            <tr>
+                <td data-label="Driver">jMaria</td>
+                <td data-label="From">Ciudad Quesada</td>
+                <td data-label="To">San Jose</td>
+                <td data-label="Seats">4</td>
+                <td data-label="Car">Nissan 2018</td>
+                <td data-label="Fee">$--</td>
+                <td data-label="Actions"><a href="/Proyecto1/EdditRide.html">Request</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Imagen de un mapa centrada -->
+    <img src="Images/city.png" alt="Map" width="1800" class="centered-logo">
+
+    <hr>
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p>
+            <!-- Enlaces de navegación en el pie de página -->
+            <a href="/Proyecto1/SearchHome.html" target="_blank">Home</a> | 
+            <a href="/Proyecto1/MyRides.html" target="_blank">Rides</a> | 
+            <a href="/Proyecto1/Booking.html" target="_blank">Booking</a> | 
+            <a href="/Proyecto1/EdditProfile.html" target="_blank">Settings</a> | 
+            <a href="/Proyecto1/Login.html" target="_blank">Login</a> | 
+            <a href="/Proyecto1/Registration/Registro.html" target="_blank">Register</a>
+        </p>
+        <!-- Derechos de autor -->
+        <p>&copy; Aventones.com</p>
+    </footer>
+</body>
+</html>
