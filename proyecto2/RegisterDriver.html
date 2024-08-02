@@ -1,122 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
     <title>Registro Driver</title>
 </head>
-
 <body>
     <div class="registro-container">
         <div class="logo-section">
-            <!-- Imagen del logo con una anchura de 100px -->
             <img src="/proyecto2/Images/logo.jpg" alt="logo" width="100">
-            <!-- Título de la página -->
             <h1>AVENTONES</h1>
         </div>
-
-        <!-- Título de la sección de registro de usuario con un tamaño de fuente de 75px -->
-         
         <h2 class="another-style" style="font-size: 50px;">Registro Driver</h2>
         <div class="regis">
-            <!-- Formulario de registro -->
             <div class="form-row">
                 <div class="form-group">
-                    <!-- Campo para el nombre -->
                     <label for="FirstName">Nombre:</label>
                     <input type="text" id="FirstName" name="FirstName">
                 </div>
                 <div class="form-group">
-                    <!-- Campo para el apellido -->
                     <label for="LastName">Apellidos:</label>
                     <input type="text" id="LastName" name="LastName">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <!-- Campo para el número de cédula -->
                     <label for="Cedula">Número de cédula:</label>
                     <input type="text" id="Cedula" name="Cedula">
                 </div>
                 <div class="form-group">
-                    <!-- Campo para la fecha de nacimiento -->
+                    <label for="Password">Password:</label>
+                    <input type="password" id="Password" name="Password">
+                </div>
+                <div class="form-group">
                     <label for="BirthDate">Fecha de nacimiento:</label>
                     <input type="date" id="BirthDate" name="BirthDate">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <!-- Campo para el correo electrónico -->
                     <label for="Email">Correo electrónico:</label>
                     <input type="email" id="Email" name="Email">
                 </div>
-
-
                 <div class="form-group">
-                    <!-- Campo para el número de teléfono -->
                     <label for="PhoneNumber">Número telefónico:</label>
                     <input type="text" id="PhoneNumber" name="PhoneNumber">
                 </div>
             </div>
-        
-        <div class="form-row">
-            <div class="form-group">
-                <!-- Campo para la marca del vehículo -->
-                <label for="CarBrand">Marca del vehículo:</label>
-                <input type="text" id="CarBrand" name="CarBrand">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="CarBrand">Marca del vehículo:</label>
+                    <input type="text" id="CarBrand" name="CarBrand">
+                </div>
+                <div class="form-group">
+                    <label for="CarModel">Modelo del vehículo:</label>
+                    <input type="text" id="CarModel" name="CarModel">
+                </div>
             </div>
-            <div class="form-group">
-                <!-- Campo para el modelo del vehículo -->
-                <label for="CarModel">Modelo del vehículo:</label>
-                <input type="text" id="CarModel" name="CarModel">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group">
-                <!-- Campo para el año del vehículo -->
-                <label for="CarYear">Año del vehículo:</label>
-                <input type="number" id="CarYear" name="CarYear" min="1886" max="2024">
-            </div>
-            <div class="form-group">
-                <!-- Campo para el número de placa -->
-                <label for="LicensePlate">Número de placa:</label>
-                <input type="text" id="LicensePlate" name="LicensePlate">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="CarYear">Año del vehículo:</label>
+                    <input type="number" id="CarYear" name="CarYear" min="1886" max="2024">
+                </div>
+                <div class="form-group">
+                    <label for="LicensePlate">Número de placa:</label>
+                    <input type="text" id="LicensePlate" name="LicensePlate">
+                </div>
             </div>
         </div>
-    </div>
-        <!-- Enlaces de navegación para usuarios registrados y conductores -->
         <nav>
             <div class="form-row links">
-                <span class="link-item">Already a User <a href="/proyecto2/Login.html" class="link-group">Login
-                        Here</a></span>
-                <span class="link-item">Register as Driver? <a href="/proyecto2/RegisterDriver.html"
-                        class="link-group">Click here</a></span>
+                <span class="link-item">Already a User <a href="/proyecto2/Login.html" class="link-group">Login Here</a></span>
+                <span class="link-item">Register as Driver? <a href="/proyecto2/RegisterDriver.html" class="link-group">Click here</a></span>
             </div>
-
-            <!-- Botón de registro -->
-
             <button id="signUpButton" class="buttonSingUp">Sign Up</button>
         </nav>
     </div>
-    </div>
-    </div>
     <hr>
-    <!-- Pie de página con enlaces de navegación -->
     <footer class="footer">
         <p>
             <a href="/proyecto2/SearchHome.html" target="_blank">Home</a> |
             <a href="/proyecto2/MyRides.html" target="_blank">Rides</a> |
             <a href="/proyecto2/Booking.html" target="_blank">Booking</a> |
-            <a href="/proyecto2/EdditProfile.html" target="_blank">Settings</a> |
+            <a href="/proyecto2/EditProfile.html" target="_blank">Settings</a> |
             <a href="/proyecto2/Login.html" target="_blank">Login</a> |
             <a href="/proyecto2/Registration/Registro.html" target="_blank">Register</a>
         </p>
         <p>&copy; Aventones.com</p>
     </footer>
-    <script src="/proyecto2/regis.js"></script>
+    <script src="/proyecto2/JavaScript/driveregis.js"></script>
 </body>
-
 </html>

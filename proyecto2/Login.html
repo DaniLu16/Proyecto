@@ -7,52 +7,37 @@
     <title>Tico Rides</title>
 </head>
 <body>
-   
-     
-           
-         <!-- Contenedor principal -->  
     <div class="container">
-           <!-- Sección del logo -->
         <div class="logo-section">
-            <img src="Images/logo.jpg" alt="logo" >
+            <img src="Images/logo.jpg" alt="logo">
             <h1>AVENTONES</h1>
         </div>
-          <!-- Botón de inicio de sesión con Google -->
-        <a href="#" target="_blank" class="buttonGoggle">Sign in with Google</a>
+        <a href="#" target="_blank" class="buttonGoogle">Sign in with Google</a>
         <h2>or</h2>
-        <!-- Sección de entrada de usuario -->
         <div class="input">
             <label for="username">Username</label>
-            <input type="text" id="username">
+            <input type="text" id="username" required>
     
             <label for="password">Password</label>
-            <input type="password" id="password">
-            <Nav>   
-             <!-- Enlace para el registro de nuevos usuarios -->
-            <h3>Not a user? <a href="Registration/Registro.html" target="_blank">Register Now</a></h3>
-              <!-- Botón de inicio de sesión -->
-    <a href="/proyecto2/MyRides.html"  class="buttonLogin">Login</a>
-    </Nav>
-</div>
-</div>
-
-
-
-        <hr>
-        <footer class="footer">
-            <p>
-                <a href="/proyecto2/SearchHome.html" target="_blank">Home</a> | 
-                <a href="/proyecto2/MyRides.html" target="_blank">Rides</a> | 
-                <a href="/proyecto2/Booking.html" target="_blank">Booking</a> | 
-                <a href="/proyecto2/EdditProfile.html" target="_blank">Settings</a> | 
-                <a href="/proyecto2/Login.html" target="_blank">Login</a> | 
-                <a href="/proyecto2/Registration/Registro.html" target="_blank">Register</a>
-            </p>
-            <p>&copy; Aventones.com</p>
-        </footer>
-    
+            <input type="password" id="password" required>
+            <nav>
+                <h3>Not a user? <a href="Registration/Registro.html" target="_blank">Register Now</a></h3>
+                <button id="loginButton" class="buttonLogin">Login</button>
+            </nav>
+        </div>
+    </div>
+    <hr>
+    <footer class="footer">
+        <p>
+            <a href="/proyecto2/SearchHome.html" target="_blank">Home</a> |
+            <a href="/proyecto2/MyRides.html" target="_blank">Rides</a> |
+            <a href="/proyecto2/Booking.html" target="_blank">Booking</a> |
+            <a href="/proyecto2/EditProfile.html" target="_blank">Settings</a> |
+            <a href="/proyecto2/Login.html" target="_blank">Login</a> |
+            <a href="/proyecto2/Registration/Registro.html" target="_blank">Register</a>
+        </p>
+        <p>&copy; Aventones.com</p>
+    </footer>
+    <script src="/proyecto2/JavaScript/login.js"></script>
 </body>
 </html>
-
-
-

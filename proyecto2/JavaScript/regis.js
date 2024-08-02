@@ -34,5 +34,5 @@ document.getElementById('signUpButton').addEventListener('click', function(event
     localStorage.setItem('users', JSON.stringify(users));
 
     alert('Registration Successful!');
-    window.location.href = '/Proyecto1/Login.html';
+    window.location.href = '/Proyecto2/Login.html';
 });
