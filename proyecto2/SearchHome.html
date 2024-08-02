@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,57 +8,56 @@
     <link rel="stylesheet" href="style.css">
     <title>Home</title>
 </head>
+
 <body>
-     <!-- Imagen del logo centrada -->
-     <div class="logo-section">
-        <img src="Images/logo.jpg" alt="logo" >
-        <h1>AVENTONES</h1>
-    </div>
-    <!-- Barra de navegación -->
-    <nav class="navbar">
-        <!-- Enlaces de navegación -->
-        <a href="/proyecto2/SearchHome.html"  class="nav-link">Home</a>
-        <a href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
-        <a href="/proyecto2/Booking.html"  class="nav-link">Booking</a>
-        <input type="text" class="search-input" placeholder="Search...">
-       
-         <!-- Icono de perfil con un menú desplegable -->
-         <div class="icon-wrapper" tabindex="0">
-            <i class="fas fa-user" id="profile-icon"></i>
-            <div class="dropdown-menu">
-                <a href="/proyecto2/EdditProfile.html" class="dropdown-item">Settings</a>
-                <a href="/proyecto2/Login.html" class="dropdown-item">Logout</a>
-            </div>
+    <div id="map" class="hoja-container">
+        <!-- Imagen del logo centrada -->
+        <div class="logo-section">
+            <img src="Images/logo.jpg" alt="logo">
+            <h1>AVENTONES</h1>
         </div>
-    </nav>
-    <!-- Título principal -->
-    <h2 class="another-style" style="font-size: 50px;">Search Rides</h2>
+        <!-- Barra de navegación -->
+        <nav class="navbar">
+            <!-- Enlaces de navegación -->
+            <a href="/proyecto2/SearchHome.html" class="nav-link">Home</a>
+            <a href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
+            <a href="/proyecto2/Booking.html" class="nav-link">Booking</a>
+            <input type="text" class="search-input" placeholder="Search...">
 
-    <!-- Formulario de búsqueda de rides -->
-  
-        <div class="form-row">
-            <div class="form-group">                      
-                <label for="from">From</label>
-                <select id="from" name="from" required>
-                    <option value="">Select Origin</option>
-                    <option value="ciudad quesda">Ciudad Quesada</option>
-                    <option value="venecia">Venecia</option>
-                    <option value="zarcero">Zarcero</option>
-                    <option value="rio cuarto">Rio Cuarto</option>
-                </select>
+            <!-- Icono de perfil con un menú desplegable -->
+            <div class="icon-wrapper" tabindex="0">
+                <i class="fas fa-user" id="profile-icon"></i>
+                <div class="dropdown-menu">
+                    <a href="/proyecto2/EdditProfile.html" class="dropdown-item">Settings</a>
+                    <a href="/proyecto2/Login.html" class="dropdown-item">Logout</a>
+                </div>
             </div>
-            <div class="form-group">                      
-                <label for="to">To</label>
-                <select id="to" name="to" required>
-                    <option value="">Select Destination</option>
-                    <option value="rio cuarto">Rio Cuarto</option>
-                    <option value="ciudad quesda">Ciudad Quesada</option>
-                    <option value="venecia">Venecia</option>
-                    <option value="zarcero">Zarcero</option>
-                </select>
+        </nav>
+        <h5>Search Rides</h5>
+        <div id="home" class="info-box">
+            <!-- Formulario de búsqueda de rides -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="from">From</label>
+                    <select id="from" name="from" required>
+                        <option value="">Select Origin</option>
+                        <option value="ciudad quesda">Ciudad Quesada</option>
+                        <option value="venecia">Venecia</option>
+                        <option value="zarcero">Zarcero</option>
+                        <option value="rio cuarto">Rio Cuarto</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="to">To</label>
+                    <select id="to" name="to" required>
+                        <option value="">Select Destination</option>
+                        <option value="rio cuarto">Rio Cuarto</option>
+                        <option value="ciudad quesda">Ciudad Quesada</option>
+                        <option value="venecia">Venecia</option>
+                        <option value="zarcero">Zarcero</option>
+                    </select>
+                </div>
             </div>
-
-           
             <!-- Sección de selección de días -->
             <div class="form-group">
                 <label>Days</label>
@@ -78,75 +78,79 @@
                     <label for="sun">Sun</label>
                 </div>
             </div>
-             <!-- Botón para buscar rides -->
-             <a href="/proyecto2/Booking.html"  class="buttonLogin">Find Rides  </a>
-
+            <!-- Botón para buscar rides -->
+            <a href="/proyecto2/Booking.html" id="btn" class="buttonLogin">Find Rides </a>
         </div>
-    
 
-    <!-- Texto informativo de rides encontrados -->
-    <p><strong>Rides found from <span style="font-weight: normal;">Ciudad Quesada</span> to <span style="font-weight: normal;">Rio Cuarto</span></strong></p>
+        <!-- Texto informativo de rides encontrados -->
+        <p><strong>Rides found from <span style="font-weight: normal;">Ciudad Quesada</span> to <span
+                    style="font-weight: normal;">Rio Cuarto</span></strong></p>
 
-    <!-- Tabla de rides -->
-    <table class="rides-table">
-        <thead>
-            <tr>
-                <th>Driver</th>
-                <th>From</th>
-                <th>To</th>
-                <th>Seats</th>
-                <th>Car</th>
-                <th>Fee</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td data-label="Driver">dpereira</td>
-                <td data-label="From">Rio Cuarto</td>
-                <td data-label="To">Alajuela</td>
-                <td data-label="Seats">2</td>
-                <td data-label="Car">Nissan 2019</td>
-                <td data-label="Fee">$5</td>
-                <td data-label="Actions"><a href="/proyecto2/VerRide.html">Request</a></td>
-            </tr>
-            <tr>
-                <td data-label="Driver">lgomez</td>
-                <td data-label="From">Rio Cuarto</td>
-                <td data-label="To">Alajuela</td>
-                <td data-label="Seats">5</td>
-                <td data-label="Car">Jeep 2024</td>
-                <td data-label="Fee">$7</td>
-                <td data-label="Actions"><a href="/proyecto2/VerRide.html">Request</a></td>
-            </tr>
-            <tr>
-                <td data-label="Driver">jMaria</td>
-                <td data-label="From">Ciudad Quesada</td>
-                <td data-label="To">San Jose</td>
-                <td data-label="Seats">4</td>
-                <td data-label="Car">Nissan 2018</td>
-                <td data-label="Fee">$--</td>
-                <td data-label="Actions"><a href="/proyecto2/VerRide.html">Request</a></td>
-            </tr>
-        </tbody>
-    </table>
+        <!-- Tabla de rides -->
+        <table class="rides-table">
+            <thead>
+                <tr>
+                    <th>Driver</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Seats</th>
+                    <th>Car</th>
+                    <th>Fee</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Driver">dpereira</td>
+                    <td data-label="From">Rio Cuarto</td>
+                    <td data-label="To">Alajuela</td>
+                    <td data-label="Seats">2</td>
+                    <td data-label="Car">Nissan 2019</td>
+                    <td data-label="Fee">$5</td>
+                    <td data-label="Actions"><a href="/proyecto2/VerRide.html">Request</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Driver">lgomez</td>
+                    <td data-label="From">Rio Cuarto</td>
+                    <td data-label="To">Alajuela</td>
+                    <td data-label="Seats">5</td>
+                    <td data-label="Car">Jeep 2024</td>
+                    <td data-label="Fee">$7</td>
+                    <td data-label="Actions"><a href="/proyecto2/VerRide.html">Request</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Driver">jMaria</td>
+                    <td data-label="From">Ciudad Quesada</td>
+                    <td data-label="To">San Jose</td>
+                    <td data-label="Seats">4</td>
+                    <td data-label="Car">Nissan 2018</td>
+                    <td data-label="Fee">$--</td>
+                    <td data-label="Actions"><a href="/proyecto2/VerRide.html">Request</a></td>
+                </tr>
+            </tbody>
+        </table>
 
-  
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1387.7843482079643!2d-84.43550286022493!3d10.322115798051954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scr!4v1721142673249!5m2!1ses!2scr" class="centered-large map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <hr>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1387.7843482079643!2d-84.43550286022493!3d10.322115798051954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scr!4v1721142673249!5m2!1ses!2scr"
+            class="centered-large map" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
     <!-- Pie de página -->
+     <hr>
     <footer class="footer">
         <p>
             <!-- Enlaces de navegación en el pie de página -->
-            <a href="/proyecto2/SearchHome.html" target="_blank">Home</a> | 
-            <a href="/proyecto2/MyRides.html" target="_blank">Rides</a> | 
-            <a href="/proyecto2/Booking.html" target="_blank">Booking</a> | 
-            <a href="/proyecto2/EdditProfile.html" target="_blank">Settings</a> | 
-            <a href="/proyecto2/Login.html" target="_blank">Login</a> | 
+            <a href="/proyecto2/SearchHome.html" target="_blank">Home</a> |
+            <a href="/proyecto2/MyRides.html" target="_blank">Rides</a> |
+            <a href="/proyecto2/Booking.html" target="_blank">Booking</a> |
+            <a href="/proyecto2/EdditProfile.html" target="_blank">Settings</a> |
+            <a href="/proyecto2/Login.html" target="_blank">Login</a> |
             <a href="/proyecto2/Registration/Registro.html" target="_blank">Register</a>
         </p>
         <!-- Derechos de autor -->
         <p>&copy; Aventones.com</p>
     </footer>
 </body>
+
 </html>

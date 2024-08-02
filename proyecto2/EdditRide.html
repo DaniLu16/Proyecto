@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,131 +8,134 @@
     <link rel="stylesheet" href="style.css">
     <title>Edit Ride</title>
 </head>
+
 <body>
-    
-    <div class="logo-section">
-        <img src="Images/logo.jpg" alt="logo" >
-        <h1>AVENTONES</h1>
-    </div>
-   <!-- Barra de navegación -->
-   <nav class="navbar">
-    <!-- Enlaces de navegación -->
-    <a href="/proyecto2/SearchHome.html" class="nav-link">Home</a>
-    <a href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
-    <a href="/proyecto2/Booking.html"  class="nav-link">Booking</a>
-    <!-- Campo de búsqueda -->
-    <input type="text" class="search-input" placeholder="Search...">
-    
-     <!-- Icono de perfil con un menú desplegable -->
-     <div class="icon-wrapper" tabindex="0">
-        <i class="fas fa-user" id="profile-icon"></i>
-        <div class="dropdown-menu">
-            <a href="/proyecto2/EdditProfile.html" class="dropdown-item">Settings</a>
-            <a href="/proyecto2/Login.html" class="dropdown-item">Logout</a>
+    <div id="ride" class="hoja-container">
+
+        <div class="logo-section">
+            <img src="Images/logo.jpg" alt="logo">
+            <h1>AVENTONES</h1>
         </div>
-    </div>
-</nav>
+        <!-- Barra de navegación -->
+        <nav class="navbar">
+            <!-- Enlaces de navegación -->
+            <a href="/proyecto2/SearchHome.html" class="nav-link">Home</a>
+            <a href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
+            <a href="/proyecto2/Booking.html" class="nav-link">Booking</a>
+            <!-- Campo de búsqueda -->
+            <input type="text" class="search-input" placeholder="Search...">
 
-    <!-- Título de la sección de edición de viaje con un tamaño de fuente de 75px -->
-    <h2 class="another-style" style="font-size: 50px;">Edit Ride</h2>
+            <!-- Icono de perfil con un menú desplegable -->
+            <div class="icon-wrapper" tabindex="0">
+                <i class="fas fa-user" id="profile-icon"></i>
+                <div class="dropdown-menu">
+                    <a href="/proyecto2/EdditProfile.html" class="dropdown-item">Settings</a>
+                    <a href="/proyecto2/Login.html" class="dropdown-item">Logout</a>
+                </div>
+            </div>
+        </nav>
 
-    <!-- Contenedor principal para el formulario de edición de viaje -->
-    <div class="home-container">
-        <form action="#" method="POST">
-            <!-- Fila del formulario con dos campos: Salida y Llegada -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="departure">Departure from</label>
-                    <input type="text" id="departure" name="departure" value="New York" required>
-                </div>
-                <div class="form-group">
-                    <label for="arrival">Arrive To</label>
-                    <input type="text" id="arrival" name="arrival" value="Boston" required>
-                </div>
-            </div>
-            <!-- Fila del formulario con los días de la semana y la hora -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Days</label>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="mon" name="days" value="mon" checked>
-                        <label for="mon">Mon</label>
-                        <input type="checkbox" id="tue" name="days" value="tue" checked>
-                        <label for="tue">Tue</label>
-                        <input type="checkbox" id="wed" name="days" value="wed" checked>
-                        <label for="wed">Wed</label>
-                        <input type="checkbox" id="thu" name="days" value="thu" checked>
-                        <label for="thu">Thu</label>
-                        <input type="checkbox" id="fri" name="days" value="fri" checked>
-                        <label for="fri">Fri</label>
-                        <input type="checkbox" id="sat" name="days" value="sat">
-                        <label for="sat">Sat</label>
-                        <input type="checkbox" id="sun" name="days" value="sun">
-                        <label for="sun">Sun</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="time">Time</label>
-                    <input type="time" id="time" name="time" value="08:00" required>
-                </div>
-            </div>
-            <!-- Fila del formulario con los campos: Asientos y Tarifa -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="seats">Seats</label>
-                    <input type="number" id="seats" name="seats" value="4" min="1" max="10" required>
-                </div>
-                <div class="form-group">
-                    <label for="fee">Fee</label>
-                    <input type="number" id="fee" name="fee" value="50" min="0" required>
-                </div>
-            </div>
-            <!-- Detalles del vehículo -->
-            <label>Vehicle Details</label>
-            <div class="car-info-box">
+       <h5>Edit Ride</h5>
+        
+
+        <!-- Contenedor principal para el formulario de edición de viaje -->
+        <div class="home-container">
+            <form action="#" method="POST">
+                <!-- Fila del formulario con dos campos: Salida y Llegada -->
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="make">Make</label>
-                        <select id="make" name="make" required>
-                            <option value="">Select Make</option>
-                            <option value="nissan" selected>Nissan</option>
-                            <option value="toyota">Toyota</option>
-                            <option value="honda">Honda</option>
-                            <option value="ford">Ford</option>
-                        </select>
+                        <label for="departure">Departure from</label>
+                        <input type="text" id="departure" name="departure" value="New York" required>
                     </div>
                     <div class="form-group">
-                        <label for="model">Model</label>
-                        <input type="text" id="model" name="model" value="Altima" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="year">Year</label>
-                        <input type="number" id="year" name="year" value="2020" min="1900" max="2024" required>
+                        <label for="arrival">Arrive To</label>
+                        <input type="text" id="arrival" name="arrival" value="Boston" required>
                     </div>
                 </div>
-            </div>
-        </form>
-    </div>
-    
-    <!-- Botones de Cancelar y Guardar -->
-    <div class="button-container">
-        <a href="#" class="new-ride2-btn left-btn">Cancel</a>
-        <a href="/proyecto2/AddRides.html" class="new-ride2-btn right-btn">Save</a>
+                <!-- Fila del formulario con los días de la semana y la hora -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Days</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="mon" name="days" value="mon" checked>
+                            <label for="mon">Mon</label>
+                            <input type="checkbox" id="tue" name="days" value="tue" checked>
+                            <label for="tue">Tue</label>
+                            <input type="checkbox" id="wed" name="days" value="wed" checked>
+                            <label for="wed">Wed</label>
+                            <input type="checkbox" id="thu" name="days" value="thu" checked>
+                            <label for="thu">Thu</label>
+                            <input type="checkbox" id="fri" name="days" value="fri" checked>
+                            <label for="fri">Fri</label>
+                            <input type="checkbox" id="sat" name="days" value="sat">
+                            <label for="sat">Sat</label>
+                            <input type="checkbox" id="sun" name="days" value="sun">
+                            <label for="sun">Sun</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" name="time" value="08:00" required>
+                    </div>
+                </div>
+                <!-- Fila del formulario con los campos: Asientos y Tarifa -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="seats">Seats</label>
+                        <input type="number" id="seats" name="seats" value="4" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fee">Fee</label>
+                        <input type="number" id="fee" name="fee" value="50" min="0" required>
+                    </div>
+                </div>
+                <label class="custom-label">Vehicle Details</label>
+                <div class="car-info-box">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="make">Make</label>
+                            <select id="make" name="make" required>
+                                <option value="">Select Make</option>
+                                <option value="nissan" selected>Nissan</option>
+                                <option value="toyota">Toyota</option>
+                                <option value="honda">Honda</option>
+                                <option value="ford">Ford</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="model">Model</label>
+                            <input type="text" id="model" name="model" value="Altima" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="year">Year</label>
+                            <input type="number" id="year" name="year" value="2020" min="1900" max="2024" required>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Botones de Cancelar y Guardar -->
+        <div class="button-container">
+            <a href="#" class="new-ride2-btn left-btn">Cancel</a>
+            <a href="/proyecto2/AddRides.html" class="new-ride2-btn right-btn">Save</a>
+        </div>
     </div>
 
     <hr>
-    
+
     <!-- Pie de página con enlaces de navegación -->
     <footer class="footer">
         <p>
-            <a href="/proyecto2/SearchHome.html" target="_blank">Home</a> | 
-            <a href="/proyecto2/MyRides.html" target="_blank">Rides</a> | 
-            <a href="/proyecto2/Booking.html" target="_blank">Booking</a> | 
-            <a href="/proyecto2/EdditProfile.html" target="_blank">Settings</a> | 
-            <a href="/proyecto2/Login.html" target="_blank">Login</a> | 
+            <a href="/proyecto2/SearchHome.html" target="_blank">Home</a> |
+            <a href="/proyecto2/MyRides.html" target="_blank">Rides</a> |
+            <a href="/proyecto2/Booking.html" target="_blank">Booking</a> |
+            <a href="/proyecto2/EdditProfile.html" target="_blank">Settings</a> |
+            <a href="/proyecto2/Login.html" target="_blank">Login</a> |
             <a href="/proyecto2/Registration/Registro.html" target="_blank">Register</a>
         </p>
         <p>&copy; Aventones.com</p>
     </footer>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,136 +8,139 @@
     <link rel="stylesheet" href="style.css">
     <title>Edit Profile</title>
 </head>
+
 <body>
+    <div id="ride" class="hoja-container">
+        <div class="logo-section">
+            <img src="Images/logo.jpg" alt="logo">
+            <h1>AVENTONES</h1>
+        </div>
+        <!-- Barra de navegación -->
+        <nav class="navbar">
+            <!-- Enlaces de navegación -->
+            <a href="/proyecto2/SearchHome.html" class="nav-link">Home</a>
+            <a href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
+            <a href="/proyecto2/Booking.html" class="nav-link">Booking</a>
+            <!-- Campo de búsqueda -->
+            <input type="text" class="search-input" placeholder="Search...">
 
-    <div class="logo-section">
-        <img src="Images/logo.jpg" alt="logo" >
-        <h1>AVENTONES</h1>
-    </div>
-    <!-- Barra de navegación -->
-    <nav class="navbar">
-        <!-- Enlaces de navegación -->
-        <a href="/proyecto2/SearchHome.html" class="nav-link">Home</a>
-        <a href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
-        <a href="/proyecto2/Booking.html"  class="nav-link">Booking</a>
-        <!-- Campo de búsqueda -->
-        <input type="text" class="search-input" placeholder="Search...">
-        
-         <!-- Icono de perfil con un menú desplegable -->
-         <div class="icon-wrapper" tabindex="0">
-            <i class="fas fa-user" id="profile-icon"></i>
-            <div class="dropdown-menu">
-                <a href="/proyecto2/EdditProfile.html" class="dropdown-item">Settings</a>
-                <a href="/proyecto2/Login.html" class="dropdown-item">Logout</a>
+            <!-- Icono de perfil con un menú desplegable -->
+            <div class="icon-wrapper" tabindex="0">
+                <i class="fas fa-user" id="profile-icon"></i>
+                <div class="dropdown-menu">
+                    <a href="/proyecto2/EdditProfile.html" class="dropdown-item">Settings</a>
+                    <a href="/proyecto2/Login.html" class="dropdown-item">Logout</a>
+                </div>
+            </div>
+        </nav>
+
+    
+        <h5>Edit Profile</h5>
+
+        <!-- Contenedor para el formulario de registro -->
+        <div class="registro-container">
+            <div class="regis">
+                <!-- Fila del formulario con dos campos: Nombre y Apellido -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="FirstName">First Name:</label>
+                        <input type="text" id="FirstName" name="FirstName" value="Daniela">
+                    </div>
+                    <div class="form-group">
+                        <label for="LastName">Last Name:</label>
+                        <input type="text" id="LastName" name="LastName" value="Pereira">
+                    </div>
+                </div>
+                <!-- Campo de correo electrónico -->
+                <div class="form-group">
+                    <label for="Email">Email:</label>
+                    <input type="email" id="Email" value="danielapereira@gmail.com">
+                </div>
+                <!-- Fila del formulario con dos campos: Contraseña y Repetir Contraseña -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="Password">Password:</label>
+                        <input type="password" id="Password" name="FirstName">
+                    </div>
+                    <div class="form-group">
+                        <label for="RepeatPassword">Repeat Password:</label>
+                        <input type="password" id="RepeatPassword" name="LastName">
+                    </div>
+                </div>
+                <!-- Campo de dirección -->
+                <div class="form-group">
+                    <label for="Address">Address:</label>
+                    <input type="text" id="Address" value="2Km norte">
+                </div>
+                <!-- Fila del formulario con dos campos: País y Estado -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="Country">Country:</label>
+                        <select id="Country" name="Country">
+                            <option value="" disabled selected>Select your country</option>
+                            <option value="cr">Costa Rica</option>
+                            <option value="ar">Argentina</option>
+                            <option value="bo">Bolivia</option>
+                            <option value="br">Brasil</option>
+                            <option value="cl">Chile</option>
+                            <option value="co">Colombia</option>
+                            <option value="cu">Cuba</option>
+                            <option value="do">República Dominicana</option>
+                            <option value="ec">Ecuador</option>
+                            <option value="sv">El Salvador</option>
+                            <option value="gt">Guatemala</option>
+                            <option value="ht">Haití</option>
+                            <option value="hn">Honduras</option>
+                            <option value="mx">México</option>
+                            <option value="ni">Nicaragua</option>
+                            <option value="pa">Panamá</option>
+                            <option value="py">Paraguay</option>
+                            <option value="pe">Perú</option>
+                            <option value="pr">Puerto Rico</option>
+                            <option value="uy">Uruguay</option>
+                            <option value="ve">Venezuela</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="State">State:</label>
+                        <input type="text" id="State" name="State" value="Alajuela">
+                    </div>
+                </div>
+                <!-- Fila del formulario con dos campos: Ciudad y Número de Teléfono -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="City">City:</label>
+                        <input type="text" id="City" name="City" value="Quesada">
+                    </div>
+                    <div class="form-group">
+                        <label for="PhoneNumber">Phone Number:</label>
+                        <input type="text" id="PhoneNumber" name="PhoneNumber" value="8666-1114">
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
 
-    <!-- Título de la sección de edición de perfil con un tamaño de fuente de 75px -->
-    <h2 class="another-style" style="font-size: 50px;">Edit Profile</h2>
-    
-    <!-- Contenedor para el formulario de registro -->
-    <div class="registro-container">
-        <div class="regis">
-            <!-- Fila del formulario con dos campos: Nombre y Apellido -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="FirstName">First Name:</label>
-                    <input type="text" id="FirstName" name="FirstName" value="Daniela">
-                </div>
-                <div class="form-group">
-                    <label for="LastName">Last Name:</label>
-                    <input type="text" id="LastName" name="LastName" value="Pereira">
-                </div>
-            </div>
-            <!-- Campo de correo electrónico -->
-            <div class="form-group">
-                <label for="Email">Email:</label>
-                <input type="email" id="Email" value="danielapereira@gmail.com">
-            </div>
-            <!-- Fila del formulario con dos campos: Contraseña y Repetir Contraseña -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="Password">Password:</label>
-                    <input type="text" id="Password" name="FirstName">
-                </div>
-                <div class="form-group">
-                    <label for="RepeatPassword">Repeat Password:</label>
-                    <input type="text" id="RepeatPassword" name="LastName">
-                </div>
-            </div>
-            <!-- Campo de dirección -->
-            <div class="form-group">
-                <label for="Address">Address:</label>
-                <input type="text" id="Address" value="2Km norte">
-            </div>
-            <!-- Fila del formulario con dos campos: País y Estado -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="Country">Country:</label>
-                    <select id="Country" name="Country">
-                        <option value="" disabled selected>Select your country</option>
-                        <option value="cr">Costa Rica</option>
-                        <option value="ar">Argentina</option>
-                        <option value="bo">Bolivia</option>
-                        <option value="br">Brasil</option>
-                        <option value="cl">Chile</option>
-                        <option value="co">Colombia</option>
-                        <option value="cu">Cuba</option>
-                        <option value="do">República Dominicana</option>
-                        <option value="ec">Ecuador</option>
-                        <option value="sv">El Salvador</option>
-                        <option value="gt">Guatemala</option>
-                        <option value="ht">Haití</option>
-                        <option value="hn">Honduras</option>
-                        <option value="mx">México</option>
-                        <option value="ni">Nicaragua</option>
-                        <option value="pa">Panamá</option>
-                        <option value="py">Paraguay</option>
-                        <option value="pe">Perú</option>
-                        <option value="pr">Puerto Rico</option>
-                        <option value="uy">Uruguay</option>
-                        <option value="ve">Venezuela</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="State">State:</label>
-                    <input type="text" id="State" name="State" value="Alajuela">
-                </div>
-            </div>
-            <!-- Fila del formulario con dos campos: Ciudad y Número de Teléfono -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="City">City:</label>
-                    <input type="text" id="City" name="City" value="Quesada">
-                </div>
-                <div class="form-group">
-                    <label for="PhoneNumber">Phone Number:</label>
-                    <input type="text" id="PhoneNumber" name="PhoneNumber" value="8666-1114">
-                </div>
-            </div>
+        <!-- Botones de Cancelar y Solicitar -->
+        <div class="button-container">
+            <a href="#" class="new-ride2-btn right-btn">Cancel</a>
+            <a href="#" class="new-ride2-btn left-btn">Save</a>
         </div>
     </div>
-    
-    <!-- Botones de Cancelar y Solicitar -->
-    <div class="button-container">
-        <a href="#" class="new-ride2-btn right-btn">Cancel</a>
-        <a href="#" class="new-ride2-btn left-btn">Request</a>
     </div>
-    
     <hr>
-    
+
     <!-- Pie de página con enlaces de navegación -->
     <footer class="footer">
         <p>
-            <a href="/proyecto2/SearchHome.html" target="_blank">Home</a> | 
-            <a href="/proyecto2/MyRides.html" target="_blank">Rides</a> | 
-            <a href="/proyecto2/Booking.html" target="_blank">Booking</a> | 
-            <a href="/proyecto2/EdditProfile.html" target="_blank">Settings</a> | 
-            <a href="/proyecto2/Login.html" target="_blank">Login</a> | 
+            <a href="/proyecto2/SearchHome.html" target="_blank">Home</a> |
+            <a href="/proyecto2/MyRides.html" target="_blank">Rides</a> |
+            <a href="/proyecto2/Booking.html" target="_blank">Booking</a> |
+            <a href="/proyecto2/EdditProfile.html" target="_blank">Settings</a> |
+            <a href="/proyecto2/Login.html" target="_blank">Login</a> |
             <a href="/proyecto2/Registration/Registro.html" target="_blank">Register</a>
         </p>
         <p>&copy; Aventones.com</p>
     </footer>
 </body>
+
 </html>

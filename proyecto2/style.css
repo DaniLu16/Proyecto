@@ -1,105 +1,148 @@
 
-/* Estilos para el encabezado h1 */
+:root {
+    --default-height: 500px; /* Altura por defecto */
+    --hoja-container-height-ride: 1100px; /* Altura específica para el ID ride */
+    --hoja-container-height-regis: 1000px; /* Altura específica para el ID regis */
+    --hoja-container-height-book: 700px;
+    --hoja-container-height-map: 1400px;
+    --ride-info-box-height: 300px;  
+    --button-width: 150px; /* Ancho del botón */
+ 
+    
+}
+#regis{
+    height: var(--hoja-container-height-regis);
+}
+#ride{
+    height: var(--hoja-container-height-ride);
+}
+#book{
+    height: var(--hoja-container-height-book);
+}
+#btn{
+    width: var(--button-width);
+  
+}
+#map{
+    height: var(--hoja-container-height-map);
+}
+
+#home{
+    max-height: var(--ride-info-box-height);
+
+}
 h1 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Familia de fuentes */
-    font-size: 50px; /* Tamaño del texto */
-    font-weight: 20; /* Grosor de la letra */
-    letter-spacing: 5px; /* Espaciado entre letras */
-    color: #000000; /* Color del texto */
-    text-align: center; /* Alineación centrada */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    font-weight: 20;
+    letter-spacing: 5px;
+    color: #000000;
+    text-align: center;
 }
 
-
-h2.another-style {
-    font-size: 50px; 
+h5 {
+    font-size: 50px;
     font-weight: 10;
-    color: #787676; 
-    letter-spacing: 5px; 
-}
-   
+    color: #787676;
+    letter-spacing: 5px;
+    margin-top: 50px;
+    text-align: center;
 
-h2{
+}
+
+h2 {
     font-family: Calibri;
     text-align: center;
     font-size: 30px;
-    color:#030303;
+    color: #030303;
     padding: 20px;
 }
-h3{
+
+h3 {
     font-family: Calibri;
-    font-size: 25px;
-    color:#030303;
-    font-weight: 15; 
+    font-size: 20px;
+    color: #030303;
+    font-weight: 15;
 
 }
+
 h4 {
     font-family: Calibri;
     font-size: 30px;
-    color:#030303;
-    font-weight:1000; 
+    color: #030303;
+    font-weight: 1000;
     text-align: center;
     padding: 0px;
 }
-p{
+
+p {
     display: block;
     margin-top: 10px;
-    font-size: 25px; 
+    font-size: 25px;
     text-align: center;
     color: #787676;
 }
-body{
-    font-family:  Calibri;
-}
-   
-/*Estilo para el logo e imagen*/
-.centered-logo {
-    display: block; /*centra la imagen*/
-    margin: auto; /*margenes equitativos*/
-    height: 150px; 
-    padding: 50px;
 
+body {
+    font-family: Calibri;
 }
+.custom-label {
+    font-size: 24px; /* Tamaño de fuente más grande */
+    color:#787676; /* Color del texto, por ejemplo, azul */
+    font-weight: bold; /* Negrita para destacar */
+    display: block; /* Hacer que ocupe toda la línea */
+    margin-bottom: 10px; /* Espacio debajo de la etiqueta */
+}
+
 
 .logo-section {
     display: flex;
-        align-items: center; /* Centra verticalmente los elementos */
-        justify-content: center; /* Centra horizontalmente los elementos */
-        text-align: center; /* Alinea el texto dentro del contenedor */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+    justify-content: center;
+    /* Centra horizontalmente los elementos */
+    text-align: center;
+    /* Alinea el texto dentro del contenedor */
+   
+   
+   
 }
 
-.image-container {
-    margin-right: 20px; /* Espacio entre la imagen y el título */
-}
+
 
 
 /*Contenedores*/
-.registro-container{
+.hoja-container {
     background-color: #fff;
     text-align: center;
     max-width: 800px;
     margin: 80px auto;
+    margin-top: 10px;
     padding: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+    height: var(--hoja-container-height, var(--default-height));
 }
-.home-container{
+
+.home-container {
     background-color: #fff;
     text-align: center;
     max-width: 1500px;
     margin: 80px auto;
-    padding: 50px;
- 
+    padding: 5px;
+
 
 }
-.verRides-container{
+
+.verRides-container {
     background-color: #fff;
     text-align: center;
     max-width: 1000px;
     margin: 80px auto;
     padding: 50px;
- 
+
 
 }
+
 .container {
     background-color: #fdfdfd;
     text-align: center;
@@ -110,139 +153,218 @@ body{
     border: 2px solid rgb(16, 16, 176);
 }
 
+/* Estilos para el contenedor de información del vehículo */
+.info-box {
+    border: 2px solid #d6d8db;
+    /* Borde sólido */
+    padding: 20px;
+    /* Espacio interno */
+    margin: 20px 0;
+    /* Margen superior e inferior */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    background-color: #f9f9f9;
+    /* Color de fondo */
+    max-height: var(--ride-info-box-height);
+    
+    
+}
+
+/* Estilos para el contenedor de información del viaje */
+.ride-info-box {
+    border: 2px solid #a0a2a5;
+    /* Borde sólido */
+    margin: 20px auto;
+    /* Margen automático en los lados */
+    background-color: #f9f9f9;
+    /* Color de fondo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    text-align: center;
+    /* Alineación del texto al centro */
+    max-width: 1px;
+    /* Ancho máximo */
+}
 
 
 /* Estilo para el botón de nueva entrada */
 .button-container {
-    text-align: right; /* Alinea el botón a la izquierda */
-    margin: 20px 0; /* Espacio superior e inferior */
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 1000px;
 }
 
 /*Botones*/
-.buttonLogin{
-    padding: 10px 20px; /* Estilo cuadrado */
-    border-radius: 10px; /* Borde redondeado */
+.buttonLogin {
+    padding: 10px 20px;
+    /* Estilo cuadrado */
+    border-radius: 5px;
+    /* Borde redondeado */
     width: 60px;
-    background-color:rgb(8, 59, 201);
-    font-size: 15px; /* Tamaño de la letra */
-    text-decoration: none; /* Elimina línea de enlace */
+    background-color: dodgerblue;
+    font-size: 20px;
+    /* Tamaño de la letra */
+    text-decoration: none;
+    /* Elimina línea de enlace */
     font-family: Calibri;
     text-align: center;
     color: rgb(255, 255, 255);
-    display: flex; /* Usar flexbox para alinear elementos */
+    display: flex;
+    /* Usar flexbox para alinear elementos */
     margin: 100px auto;
-    justify-content: center; /* Centrar horizontalmente los elementos */
-    transition: transform 0.2s, box-shadow 0.2s; /* Transiciones suaves */
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+    justify-content: center;
+    /* Centrar horizontalmente los elementos */
+    transition: transform 0.2s, box-shadow 0.2s;
     justify-content: space-between;
     justify-content: center;
 
 
 
 }
-.buttonSingUp{
-    padding: 10px 20px; /* Estilo cuadrado */
-    border-radius: 10px; /* Borde redondeado */
-    width: 100px;
-    background-color:rgb(82, 84, 85);
-    font-size: 15px; /* Tamaño de la letra */
-    text-decoration: none; /* Elimina línea de enlace */
+
+.buttonSingUp {
+    padding: 10px 20px;
+    /* Estilo cuadrado */
+    border-radius: 10px;
+    /* Borde redondeado */
+    width: 150px;
+    background-color: rgb(82, 84, 85);
+    font-size: 20px;
+    /* Tamaño de la letra */
+    text-decoration: none;
+    /* Elimina línea de enlace */
     font-family: Calibri;
     text-align: center;
     color: rgb(255, 255, 255);
-    display: flex; /* Usar flexbox para alinear elementos */
-    margin: 20px auto; /* Centra el botón horizontalmente */
-    justify-content: center; /* Centrar horizontalmente los elementos */
-    transition: transform 0.2s, box-shadow 0.2s; /* Transiciones suaves */
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+    display: flex;
+    /* Usar flexbox para alinear elementos */
+    margin: 50px auto;
+    /* Centra el botón horizontalmente */
+    justify-content: center;
+    /* Centrar horizontalmente los elementos */
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Transiciones suaves */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    /* Agregar sombra */
 
 
 
 
 }
+
 .buttonLogin:hover {
-    transform: scale(1.1); /* Aumenta el tamaño al hacer hover */
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    transform: scale(1.1);
+    /* Aumenta el tamaño al hacer hover */
+   
+    /* Sombra más pronunciada */
 }
-.buttonGoggle{
-    padding: 10px 20px; /* Estilo cuadrado */
-    border-radius: 15px; /* Borde redondeado */
+
+.buttonGoggle {
+    padding: 10px 20px;
+    /* Estilo cuadrado */
+    border-radius: 15px;
+    /* Borde redondeado */
     width: 250px;
-    background-color:rgb(249, 249, 249);
-    font-size: 20px; /* Tamaño de la letra */
-    text-decoration: none; /* Elimina línea de enlace */
+    background-color: rgb(249, 249, 249);
+    font-size: 20px;
+    /* Tamaño de la letra */
+    text-decoration: none;
+    /* Elimina línea de enlace */
     font-family: Calibri;
     text-align: center;
     color: dodgerblue;
-    display: flex; /* Usar flexbox para alinear elementos */
+    display: flex;
+    /* Usar flexbox para alinear elementos */
     margin: 50px auto;
-    justify-content: center; /* Centrar horizontalmente los elementos */
-    transition: transform 0.2s, box-shadow 0.2s; /* Transiciones suaves */
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); /* Agregar sombra */
-      /* Establecer imagen a la izquierda */
-      background-image: url(Images/iconoGoogle.jpg); 
-      background-size: 30px; /* Tamaño de la imagen */
-      background-position: 10px center; /* Ajusta la posición de la imagen */
-      background-repeat: no-repeat; /* Evita que la imagen se repita */
+    justify-content: center;
+    /* Centrar horizontalmente los elementos */
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Transiciones suaves */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    /* Agregar sombra */
+    /* Establecer imagen a la izquierda */
+    background-image: url(Images/iconoGoogle.jpg);
+    background-size: 30px;
+    /* Tamaño de la imagen */
+    background-position: 10px center;
+    /* Ajusta la posición de la imagen */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
 
 
 }
+
 .buttonGoggle:hover {
-    transform: scale(1.1); /* Aumenta el tamaño al hacer hover */
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    transform: scale(1.1);
+    /* Aumenta el tamaño al hacer hover */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra más pronunciada */
 }
 
 
 .button-container {
     display: flex;
-    justify-content: space-between; /* Distribuye los elementos a los lados */
-    margin-top: 20px; /* Espacio superior */
+    justify-content: space-between;
+    gap: 600px;
+
+   
 }
 
 /* Estilo del botón New Ride */
 .new-ride2-btn {
-    padding: 10px 20px; /* Estilo cuadrado */
-    border-radius: 2px; /* Borde redondeado */
-    width: 150px;
-    font-size: 30px; /* Tamaño de la letra */
-    text-decoration: none; /* Elimina línea de enlace */
+  
+    padding: 10px 20px;
+    /* Estilo cuadrado */
+    width: var(--button-width);
+    background-color:  dodgerblue;
+    font-size: 20px;
+    /* Tamaño de la letra */
+    text-decoration: none;
+    /* Elimina línea de enlace */
     font-family: Calibri;
-    text-align: right;
-    display: flex; /* Usar flexbox para alinear elementos */
-    margin: 100px auto;
-    justify-content: center; /* Centrar horizontalmente los elementos */
-    transition: transform 0.2s, box-shadow 0.2s; /* Transiciones suaves */
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+    text-align: center;
+    color: rgb(255, 255, 255);
+    display: flex;
+    /* Usar flexbox para alinear elementos */
+    margin: 50px auto;
+    justify-content: center;
+    /* Centrar horizontalmente los elementos */
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Transiciones suaves */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    /* Agregar sombra */
+    justify-content: space-between;
+    justify-content: center;
+   
 
 }
 
-.left-btn{
-    color: dodgerblue;
-    margin-right: 400px;
-}
 
-.right-btn {
-    color: dodgerblue;
-    margin-left: 400px;
-}
 /*Estilo para los labes de cada input */
 .input label {
     display: block;
     margin-top: 10px;
     font-family: Calibri;
-    font-size:20px; /* Tamaño de fuente más grande */
-    text-align: left; /* Alinea el texto del label a la izquierda */
-    padding-left: 35%; /* Ajusta este valor según lo necesites */
+    font-size: 20px;
+    padding-right: 55%;
+   
+   
+    
 
 }
+
 /*Estilo para cuadro de input*/
 .input input {
     display: block;
     font-family: Calibri;
-    font-size:px; /* Tamaño de fuente más grande */
-    width: 400px; /* Ancho del contenedor */
-    padding: 10px; /* Ajusta este valor para cambiar el padding */
-    margin: 5px auto; /* Centra los inputs */
+    font-size: px;
+    /* Tamaño de fuente más grande */
+    width: 400px;
+    /* Ancho del contenedor */
+    padding: 10px;
+    /* Ajusta este valor para cambiar el padding */
+    margin: 5px auto;
+    /* Centra los inputs */
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -253,360 +375,492 @@ body{
 
 /* Estilo para el grupo de formulario (contenedor de cada campo del formulario) */
 .form-group {
-    margin-bottom: 15px; /* Margen inferior */
-    text-align: left; /* Alineación del texto a la izquierda */
+    margin-bottom: 15px;
+    /* Margen inferior */
+    text-align: left;
+    /* Alineación del texto a la izquierda */
 }
 
 /* Estilo para la fila del formulario (contenedor para filas de campos en el formulario) */
 .form-row {
-    display: flex; /* Mostrar como flexbox para alinear elementos */
-    justify-content: space-between; /* Distribuir el espacio entre los elementos */
-    margin-bottom: 15px; /* Margen inferior */
+    display: flex;
+    /* Mostrar como flexbox para alinear elementos */
+    justify-content: space-between;
+    /* Distribuir el espacio entre los elementos */
+    margin-bottom: 15px;
+    /* Margen inferior */
 }
 
 /* Estilo para la etiqueta del campo del formulario */
 .form-group label {
-    display: block; /* Mostrar como bloque para ocupar el ancho completo */
-    margin-bottom: 5px; /* Margen inferior */
-    font-weight: bold; /* Peso de la fuente en negrita */
-    font-size: 20px; /* Tamaño de la fuente */
+    display: block;
+    /* Mostrar como bloque para ocupar el ancho completo */
+    margin-bottom: 5px;
+    /* Margen inferior */
+    font-weight: bold;
+    /* Peso de la fuente en negrita */
+    font-size: 20px;
+    /* Tamaño de la fuente */
 }
 
 /* Estilo para los campos de entrada y select del formulario */
 .form-group input,
 .form-group select {
-    width: 100%; /* Ancho completo del contenedor */
-    padding: 10px; /* Relleno interior */
-    font-size: 20px; /* Tamaño de la fuente */
-    box-sizing: border-box; /* Incluir el borde y el relleno en el ancho total */
-    border: 1px solid #ccc; /* Borde delgado de color gris */
-    border-radius: 4px; /* Bordes redondeados */
+    width: 100%;
+    /* Ancho completo del contenedor */
+    padding: 10px;
+    /* Relleno interior */
+    font-size: 20px;
+    /* Tamaño de la fuente */
+    box-sizing: border-box;
+    /* Incluir el borde y el relleno en el ancho total */
+    border: 1px solid #ccc;
+    /* Borde delgado de color gris */
+    border-radius: 4px;
+    /* Bordes redondeados */
 }
 
 /* Estilo para los grupos de formulario en filas (dividir en varias columnas) */
 .form-row .form-group {
-    flex: 1; /* Ocupar todo el espacio disponible */
-    margin-right: 10px; /* Margen derecho entre los grupos */
+    flex: 1;
+    /* Ocupar todo el espacio disponible */
+    margin-right: 5px;
+   
+    
+    /* Margen derecho entre los grupos */
 }
 
 /* Estilo para el último grupo de formulario en filas (eliminar margen derecho) */
 .form-row .form-group:last-child {
-    margin-right: 0; /* Sin margen derecho */
+    margin-right: 0;
+    /* Sin margen derecho */
 }
 
 /* Estilo para el grupo de formulario de ancho completo */
 .form-group.full-width {
-    text-align: center; /* Alineación del texto al centro */
-    margin-top: 20px; /* Margen superior */
+    text-align: center;
+    /* Alineación del texto al centro */
+    margin-top: 20px;
+    /* Margen superior */
 }
 
 /* Estilo para la fila de enlaces (contenedor de enlaces en el formulario) */
 .form-row.links {
-    display: flex; /* Mostrar como flexbox para alinear elementos */
-    flex-direction: row; /* Dirección de fila (horizontal) */
-    justify-content: center; /* Centrar horizontalmente todos los elementos */
-    align-items: center; /* Centrar verticalmente todos los elementos */
+    display: flex;
+    /* Mostrar como flexbox para alinear elementos */
+    flex-direction: row;
+    /* Dirección de fila (horizontal) */
+    justify-content: center;
+    /* Centrar horizontalmente todos los elementos */
+    align-items: center;
+    /* Centrar verticalmente todos los elementos */
 }
 
 /* Estilo para elementos de enlace en la fila de enlaces */
 .link-item {
-    margin: 0 10px; /* Margen a los lados de cada elemento de enlace */
+    margin: 0 10px;
+    /* Margen a los lados de cada elemento de enlace */
 }
 
 /*Pie de Pagina*/
 footer p a {
-    text-decoration: none; /* Elimina el subrayado */
-    color: #808080; /* Cambia el color a gris */
-    margin: 0 10px; /* Agrega un margen entre los enlaces del footer */
+    text-decoration: none;
+    /* Elimina el subrayado */
+    color: #808080;
+    /* Cambia el color a gris */
+    margin: 0 10px;
+    /* Agrega un margen entre los enlaces del footer */
+    font-size: 16px; /* Tamaño de la letra */
 }
 
 
 /* Barra de navegación */
 .navbar {
-    display: flex; /* Mostrar como flexbox para alinear elementos */
-    justify-content: space-around; /* Distribuir el espacio entre los elementos */
-    background-color: #f8f8f8; /* Color de fondo de la barra de navegación */
-    padding: 5px; /* Relleno interior */
-    width: 60%; /* Ancho del contenedor de la barra de navegación */
-    margin: 0 auto; /* Centrar la barra de navegación horizontalmente */
-    border-radius: 8px; /* Bordes redondeados */
+    display: flex;
+    /* Mostrar como flexbox para alinear elementos */
+    justify-content: space-around;
+    /* Distribuir el espacio entre los elementos */
+    background-color: #f8f8f8;
+    /* Color de fondo de la barra de navegación */
+    padding: 5px;
+    /* Relleno interior */
+    width: 100%;
+    /* Ancho del contenedor de la barra de navegación */
+    margin-top: 20px;
+    /* Centrar la barra de navegación horizontalmente */
+   
 }
 
 /* Estilo para los enlaces de navegación */
 .nav-link {
-    color: #333; /* Color del texto de los enlaces */
-    text-decoration: none; /* Sin subrayado en los enlaces */
-    padding: 10px; /* Relleno interior */
-    font-size: 40px; /* Tamaño de la fuente de los enlaces */
-    margin: 0; /* Eliminar márgenes exteriores */
-    transition: color 0.3s ease; /* Transición suave del color */
+    color: #333;
+    /* Color del texto de los enlaces */
+    text-decoration: none;
+    /* Sin subrayado en los enlaces */
+    padding: 10px;
+    /* Relleno interior */
+    font-size: 25px;
+    /* Tamaño de la fuente de los enlaces */
+    margin: 0;
+    /* Eliminar márgenes exteriores */
+    transition: color 0.3s ease;
+    /* Transición suave del color */
 }
 
 /* Estilo al hacer hover o enfoque en los enlaces de navegación */
-.nav-link:hover, .nav-link:focus, .nav-link:active {
-    background-color: #007BFF; /* Color de fondo al hacer hover, enfoque o activo */
-    color: #fff; /* Color del texto al hacer hover, enfoque o activo */
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+    background-color: #007BFF;
+    /* Color de fondo al hacer hover, enfoque o activo */
+    color: #fff;
+    /* Color del texto al hacer hover, enfoque o activo */
 }
 
 
 /* Estilo para el input de búsqueda */
 .search-input {
-    padding: 10px; /* Relleno interior */
-    font-size: 30px; /* Tamaño de la fuente */
-    border: 1px solid #ccc; /* Borde delgado de color gris */
-    border-radius: 4px; /* Bordes redondeados */
-    width: 300px; /* Ancho fijo para el campo de búsqueda */
-    margin-left: 10px; /* Espacio a la izquierda del último enlace */
+    padding: 10px;
+    /* Relleno interior */
+    font-size: 25px;
+    /* Tamaño de la fuente */
+    border: 1px solid #ccc;
+    /* Borde delgado de color gris */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    width: 150px;
+    /* Ancho fijo para el campo de búsqueda */
+    margin-left: 150px;
+    /* Espacio a la izquierda del último enlace */
 }
 
 /* Estilo para el contenedor del icono */
 .icon-wrapper {
-    position: relative; /* Posición relativa para el contenedor */
-    display: inline-block; /* Mostrar como bloque en línea */
-    margin-left: 10px; /* Margen a la izquierda */
-    cursor: pointer; /* Cursor de puntero */
-    outline: none; /* Quitar borde al hacer clic */
+    position: relative;
+    /* Posición relativa para el contenedor */
+    display: inline-block;
+    /* Mostrar como bloque en línea */
+    margin-left: 10px;
+    /* Margen a la izquierda */
+    cursor: pointer;
+    /* Cursor de puntero */
+    outline: none;
+    /* Quitar borde al hacer clic */
 }
 
 /* Estilo para el icono de perfil */
 #profile-icon {
-    font-size: 50px; /* Tamaño de la fuente del icono */
-    color: #333; /* Color del icono */
-    transition: color 0.3s ease; /* Transición suave del color */
-    cursor: pointer; /* Cursor de puntero */
+    font-size: 40px;
+    /* Tamaño de la fuente del icono */
+    color: #333;
+    /* Color del icono */
+    transition: color 0.3s ease;
+    /* Transición suave del color */
+    cursor: pointer;
+    /* Cursor de puntero */
 }
 
 /* Cambio de color al hacer hover sobre el icono de perfil */
 #profile-icon:hover {
-    color: #007bff; /* Color del icono al hacer hover */
+    color: #007bff;
+    /* Color del icono al hacer hover */
 }
 
 /* Estilo para el menú desplegable */
 .dropdown-menu {
-    display: none; /* Ocultar por defecto */
-    font-size: 30px; /* Tamaño de la fuente del menú desplegable */
-    position: absolute; /* Posición absoluta para fijar en la barra de navegación */
-    top: 35px; /* Distancia desde la parte superior */
-    right: 0; /* Alineación a la derecha */
-    background-color: #ffffff; /* Color de fondo del menú */
-    border: 1px solid #ccc; /* Borde delgado de color gris */
-    border-radius: 4px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    z-index: 1000; /* Índice z para superponer sobre otros elementos */
+    display: none;
+    /* Ocultar por defecto */
+    font-size: 30px;
+    /* Tamaño de la fuente del menú desplegable */
+    position: absolute;
+    /* Posición absoluta para fijar en la barra de navegación */
+    top: 35px;
+    /* Distancia desde la parte superior */
+    right: 0;
+    /* Alineación a la derecha */
+    background-color: #ffffff;
+    /* Color de fondo del menú */
+    border: 1px solid #ccc;
+    /* Borde delgado de color gris */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    z-index: 1000;
+    /* Índice z para superponer sobre otros elementos */
 }
 
 /* Estilo para los ítems del menú desplegable */
 .dropdown-item {
-    display: block; /* Mostrar como bloque */
-    padding: 10px; /* Relleno interior */
-    text-decoration: none; /* Sin subrayado en los ítems */
-    color: #333; /* Color del texto de los ítems */
-    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    display: block;
+    /* Mostrar como bloque */
+    padding: 10px;
+    /* Relleno interior */
+    text-decoration: none;
+    /* Sin subrayado en los ítems */
+    color: #333;
+    /* Color del texto de los ítems */
+    transition: background-color 0.3s ease;
+    /* Transición suave del color de fondo */
 }
 
 /* Cambio de color de fondo al hacer hover sobre los ítems del menú desplegable */
 .dropdown-item:hover {
-    background-color: #f1f1f1; /* Color de fondo al hacer hover */
+    background-color: #f1f1f1;
+    /* Color de fondo al hacer hover */
 }
 
 
 /* Estilos para la tabla de viajes */
 .rides-table {
-    width: 100%; /* Ancho completo */
-    max-width: 1200px; /* Ancho máximo */
-    border-collapse: collapse; /* Colapsar bordes de celda */
-    margin: 20px auto; /* Centrar la tabla horizontalmente */
-    overflow-x: auto; /* Permitir desplazamiento horizontal si es necesario */
+    width: 100%;
+    /* Ancho completo */
+    max-width: 2000px;
+    /* Ancho máximo */
+    border-collapse: collapse;
+    /* Colapsar bordes de celda */
+    margin: 20px auto;
+    /* Centrar la tabla horizontalmente */
+    overflow-x: auto;
+    /* Permitir desplazamiento horizontal si es necesario */
 }
 
 /* Encabezado de la tabla */
 .rides-table thead {
-    background-color: #f1f1f1; /* Color de fondo del encabezado */
+    background-color: #474444;
+    /* Color de fondo del encabezado */
 }
 
 /* Estilos para las celdas de encabezado y cuerpo */
 .rides-table th,
 .rides-table td {
-    padding: 15px; /* Relleno interior */
-    text-align: left; /* Alineación del texto a la izquierda */
-    border: 1px solid #ccc; /* Borde delgado de color gris */
-    font-size: 30px; /* Tamaño de la fuente */
+    padding: 15px;
+    /* Relleno interior */
+    text-align: left;
+    /* Alineación del texto a la izquierda */
+    border: 1px solid #ccc;
+    /* Borde delgado de color gris */
+    font-size: 20px;
+    /* Tamaño de la fuente */
 }
 
 /* Estilos específicos para las celdas de encabezado */
 .rides-table th {
-    background-color: #f7f7f7; /* Color de fondo */
-    position: sticky; /* Elemento fijo en la parte superior */
-    top: 0; /* Posición fija en la parte superior */
-    z-index: 1; /* Z-index para superponer sobre el contenido */
+    background-color: #f7f7f799;
+    /* Color de fondo */
+    position: sticky;
+    /* Elemento fijo en la parte superior */
+    top: 0;
+    /* Posición fija en la parte superior */
+    z-index: 1;
+    /* Z-index para superponer sobre el contenido */
+    text-align: center; /* Centra el texto horizontalmente */
+
 }
 
 /* Estilos para las celdas de cuerpo */
 .rides-table td {
-    white-space: nowrap; /* No permitir saltos de línea en el texto largo */
+    white-space: nowrap;
+    /* No permitir saltos de línea en el texto largo */
 }
 
 /* Grupo de checkboxes */
 .checkbox-group {
-    display: flex; /* Mostrar como flexbox */
-    justify-content: center; /* Centrar los checkboxes horizontalmente */
-    gap: 10px; /* Espacio entre los checkboxes */
+    display: flex;
+    /* Mostrar como flexbox */
+    justify-content: center;
+    /* Centrar los checkboxes horizontalmente */
+    gap: 10px;
+    /* Espacio entre los checkboxes */
 }
 
 /* Estilos para el menú desplegable */
 .dropdown-menu {
-    display: none; /* Ocultar por defecto */
-    position: absolute; /* Posición absoluta */
-    top: 35px; /* Distancia desde la parte superior */
-    right: 0; /* Alineación a la derecha */
-    background-color: #ffffff; /* Color de fondo */
-    border: 1px solid #ccc; /* Borde delgado de color gris */
-    border-radius: 4px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    z-index: 1000; /* Índice z para superponer sobre otros elementos */
+    display: none;
+    /* Ocultar por defecto */
+    position: absolute;
+    /* Posición absoluta */
+    top: 35px;
+    /* Distancia desde la parte superior */
+    right: 0;
+    /* Alineación a la derecha */
+    background-color: #ffffff;
+    /* Color de fondo */
+    border: 1px solid #ccc;
+    /* Borde delgado de color gris */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    z-index: 1000;
+    /* Índice z para superponer sobre otros elementos */
 }
 
 /* Estilos para los ítems del menú desplegable */
 .dropdown-item {
-    display: block; /* Mostrar como bloque */
-    padding: 5px; /* Relleno interior */
-    text-decoration: none; /* Sin subrayado en los ítems */
-    color: #000000; /* Color del texto de los ítems */
-    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    display: block;
+    /* Mostrar como bloque */
+    padding: 5px;
+    /* Relleno interior */
+    text-decoration: none;
+    /* Sin subrayado en los ítems */
+    color: #000000;
+    /* Color del texto de los ítems */
+    transition: background-color 0.3s ease;
+    /* Transición suave del color de fondo */
 }
 
 /* Cambio de color de fondo al hacer hover sobre los ítems del menú desplegable */
 .dropdown-item:hover {
-    background-color: #f1f1f1; /* Color de fondo al hacer hover */
+    background-color: #f1f1f1;
+    /* Color de fondo al hacer hover */
 }
 
 /* Mostrar menú cuando el contenedor tiene el foco o está activo */
 .icon-wrapper:focus-within .dropdown-menu,
 .icon-wrapper:focus .dropdown-menu {
-    display: block; /* Mostrar el menú desplegable */
+    display: block;
+    /* Mostrar el menú desplegable */
 }
 
 /* Estilos para el contenedor de botones */
 .button-container {
-    text-align: right; /* Alineación del texto a la derecha */
-    margin: 20px 0; /* Margen superior e inferior */
+    text-align: right;
+    /* Alineación del texto a la derecha */
+    margin: 20px 0;
+    /* Margen superior e inferior */
 }
 
-/* Estilos para el botón de nuevo viaje */
-.new-ride2-btn:hover {
-    background-color: #007bff; /* Color de fondo al hacer hover */
-    color: #ffffff; /* Color del texto al hacer hover */
-}
+
 
 /* Estilos para el encabezado */
 .header {
-    display: flex; /* Mostrar como flexbox */
-    justify-content: space-between; /* Distribuir espacio entre los elementos */
-    align-items: center; /* Alinear elementos verticalmente */
-    margin-bottom: 20px; /* Margen inferior */
+    display: flex;
+    /* Mostrar como flexbox */
+    justify-content: space-between;
+    /* Distribuir espacio entre los elementos */
+    align-items: center;
+    /* Alinear elementos verticalmente */
+    margin-bottom: 20px;
+    /* Margen inferior */
 }
 
 /* Estilos para el título h2 del encabezado */
 .header h2 {
-    margin: 0; /* Eliminar márgenes */
+    margin: 0;
+    /* Eliminar márgenes */
 }
 
 /* Estilos para la imagen de usuario */
 .user img {
-    border-radius: 50%; /* Borde redondeado */
-    width: 50px; /* Ancho de la imagen */
-    height: 50px; /* Altura de la imagen */
+    border-radius: 50%;
+    /* Borde redondeado */
+    width: 50px;
+    /* Ancho de la imagen */
+    height: 50px;
+    /* Altura de la imagen */
 }
 
 /* Estilos para el párrafo de usuario */
 .user p {
-    margin: 0; /* Eliminar márgenes */
-    font-size: 14px; /* Tamaño de la fuente */
-    text-align: center; /* Alineación del texto al centro */
+    margin: 0;
+    /* Eliminar márgenes */
+    font-size: 14px;
+    /* Tamaño de la fuente */
+    text-align: center;
+    /* Alineación del texto al centro */
 }
 
 /* Estilos para los enlaces del menú */
 .menu a {
-    text-decoration: none; /* Sin subrayado en los enlaces */
-    color: #007bff; /* Color del texto de los enlaces */
+    text-decoration: none;
+    /* Sin subrayado en los enlaces */
+    color: #007bff;
+    /* Color del texto de los enlaces */
 }
 
 /* Estilos al hacer hover sobre los enlaces del menú */
 .menu a:hover {
-    text-decoration: underline; /* Subrayado al hacer hover */
+    text-decoration: underline;
+    /* Subrayado al hacer hover */
 }
 
 /* Estilos para el formulario de reserva */
 .reservation-form {
-    display: flex; /* Mostrar como flexbox */
-    flex-direction: column; /* Dirección de columna para los elementos internos */
-    gap: 20px; /* Espacio entre elementos */
+    display: flex;
+    /* Mostrar como flexbox */
+    flex-direction: column;
+    /* Dirección de columna para los elementos internos */
+    gap: 20px;
+    /* Espacio entre elementos */
 }
 
 /* Estilos para los contenedores de ruta, horario y vehículo */
-.route, .time-seats, .vehicle {
-    display: flex; /* Mostrar como flexbox */
-    justify-content: space-between; /* Distribuir espacio entre los elementos */
+.route,
+.time-seats,
+.vehicle {
+    display: flex;
+    /* Mostrar como flexbox */
+    justify-content: space-between;
+    /* Distribuir espacio entre los elementos */
 }
 
 /* Estilos para el campo */
 .field {
-    display: flex; /* Mostrar como flexbox */
-    flex-direction: column; /* Dirección de columna para los elementos internos */
-    align-items: flex-start; /* Alinear elementos a la izquierda */
-    gap: 5px; /* Espacio entre elementos */
+    display: flex;
+    /* Mostrar como flexbox */
+    flex-direction: column;
+    /* Dirección de columna para los elementos internos */
+    align-items: flex-start;
+    /* Alinear elementos a la izquierda */
+    gap: 5px;
+    /* Espacio entre elementos */
 }
 
 /* Estilos para los días */
 .days {
-    display: flex; /* Mostrar como flexbox */
-    justify-content: space-between; /* Distribuir espacio entre los elementos */
-    flex-wrap: wrap; /* Envolver elementos en múltiples líneas */
-    gap: 10px; /* Espacio entre elementos */
+    display: flex;
+    /* Mostrar como flexbox */
+    justify-content: space-between;
+    /* Distribuir espacio entre los elementos */
+    flex-wrap: wrap;
+    /* Envolver elementos en múltiples líneas */
+    gap: 10px;
+    /* Espacio entre elementos */
 }
 
 /* Estilos para cada día */
 .day {
-    width: 30px; /* Ancho fijo para cada día */
-    text-align: center; /* Alineación del texto al centro */
+    width: 30px;
+    /* Ancho fijo para cada día */
+    text-align: center;
+    /* Alineación del texto al centro */
 }
 
 /* Estilos para las acciones */
 .actions {
-    display: flex; /* Mostrar como flexbox */
-    justify-content: space-between; /* Distribuir espacio entre los elementos */
-    gap: 10px; /* Espacio entre elementos */
+    display: flex;
+    /* Mostrar como flexbox */
+    justify-content: space-between;
+    /* Distribuir espacio entre los elementos */
+    gap: 10px;
+    /* Espacio entre elementos */
 }
 
-/* Estilos para el contenedor de información del vehículo */
-.car-info-box {
-    border: 2px solid #a0a2a5; /* Borde sólido */
-    padding: 20px; /* Espacio interno */
-    margin: 20px 0; /* Margen superior e inferior */
-    border-radius: 10px; /* Bordes redondeados */
-    background-color: #f9f9f9; /* Color de fondo */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-/* Estilos para el contenedor de información del viaje */
-.ride-info-box {
-    border: 2px solid #a0a2a5; /* Borde sólido */
-    margin: 20px auto; /* Margen automático en los lados */
-    background-color: #f9f9f9; /* Color de fondo */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    text-align: center; /* Alineación del texto al centro */
-    max-width: 1px; /* Ancho máximo */
-}
 
 .centered-large {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 90%; /* Puedes ajustar el ancho según tus necesidades */
-    max-width: 1800px; /* Limita el ancho máximo */
+    width: 90%;
+    /* Puedes ajustar el ancho según tus necesidades */
+    max-width: 1800px;
+    /* Limita el ancho máximo */
 }
+
 .map {
-    width: 100%;
-    height: 600px; /* Ajusta la altura según tus necesidades */
+    width:100%;
+    height: 300px;
+    /* Ajusta la altura según tus necesidades */
     border: 0;
 }

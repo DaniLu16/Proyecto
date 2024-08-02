@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,124 +8,131 @@
     <link rel="stylesheet" href="style.css">
     <title>Ver Rides</title>
 </head>
-<body>
 
-    <!-- Imagen del logo centrada -->
-    <div class="logo-section">
-        <img src="Images/logo.jpg" alt="logo" >
-        <h1>AVENTONES</h1>
-    </div>
-    
-   <!-- Barra de navegación -->
-   <nav class="navbar">
-    <!-- Enlaces de navegación -->
-    <a href="/proyecto2/SearchHome.html" class="nav-link">Home</a>
-    <a href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
-    <a href="/proyecto2/Booking.html"  class="nav-link">Booking</a>
-    <!-- Campo de búsqueda -->
-    <input type="text" class="search-input" placeholder="Search...">
-    
-     <!-- Icono de perfil con un menú desplegable -->
-     <div class="icon-wrapper" tabindex="0">
-        <i class="fas fa-user" id="profile-icon"></i>
-        <div class="dropdown-menu">
-            <a href="/proyecto2/EdditProfile.html" class="dropdown-item">Settings</a>
-            <a href="/proyecto2/Login.html" class="dropdown-item">Logout</a>
+<body>
+    <div id="ride" class="hoja-container">
+        <!-- Imagen del logo centrada -->
+        <div class="logo-section">
+            <img src="Images/logo.jpg" alt="logo">
+            <h1>AVENTONES</h1>
+        </div>
+
+        <!-- Barra de navegación -->
+        <nav class="navbar">
+            <!-- Enlaces de navegación -->
+            <a href="/proyecto2/SearchHome.html" class="nav-link">Home</a>
+            <a href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
+            <a href="/proyecto2/Booking.html" class="nav-link">Booking</a>
+            <!-- Campo de búsqueda -->
+            <input type="text" class="search-input" placeholder="Search...">
+
+            <!-- Icono de perfil con un menú desplegable -->
+            <div class="icon-wrapper" tabindex="0">
+                <i class="fas fa-user" id="profile-icon"></i>
+                <div class="dropdown-menu">
+                    <a href="/proyecto2/EdditProfile.html" class="dropdown-item">Settings</a>
+                    <a href="/proyecto2/Login.html" class="dropdown-item">Logout</a>
+                </div>
+            </div>
+        </nav>
+        
+        <h5>Quesada - Zarcero</h5>
+
+       
+
+        <!-- Imagen de usuario centrada -->
+        <img src="Images/user.jpg" alt="User" class="centered-logo">
+        <h4 style="font-weight: bold;">Dpereira</h4>
+
+        <!-- Contenedor principal de la información del ride -->
+       
+            <form class="reservation-form">
+                <!-- Información de la ruta -->
+                <div class="route">
+                    <div class="field">
+                        <strong><label for="departure">Departure from</label></strong>
+                        <input type="text" id="departure" value="Quesada" readonly>
+                    </div>
+                    <div class="field">
+                        <strong><label for="arrival">Arrive To</label></strong>
+                        <input type="text" id="arrival" value="Zarcero" readonly>
+                    </div>
+                </div>
+
+                <!-- Selección de días -->
+                <div class="days">
+                    <strong><label>Days:</label></strong>
+                    <div class="day"><input type="checkbox" checked> Mon</div>
+                    <div class="day"><input type="checkbox"> Tue</div>
+                    <div class="day"><input type="checkbox" checked> Wed</div>
+                    <div class="day"><input type="checkbox"> Thu</div>
+                    <div class="day"><input type="checkbox"> Fri</div>
+                    <div class="day"><input type="checkbox" checked> Sat</div>
+                    <div class="day"><input type="checkbox"> Sun</div>
+                </div>
+
+                <!-- Información de tiempo y asientos -->
+                <div class="time-seats">
+                    <div class="field">
+                        <strong><label for="time">Time</label></strong>
+                        <input type="time" id="time" value="10:00">
+                    </div>
+                    <div class="field">
+                        <strong><label for="seats">Seats</label></strong>
+                        <input type="number" id="seats" value="2" min="1">
+                    </div>
+                    <div class="field">
+                        <strong><label for="fee">Fee</label></strong>
+                        <input type="number" id="fee" value="15" min="0">
+                    </div>
+                </div>
+
+                <div id="home" class="info-box">
+                <!-- Información del vehículo -->
+                <div class="vehicle">
+                    <div class="field">
+                        <strong><label for="make">Make</label></strong>
+                        <select id="make">
+                            <option value="Nissan" selected>Nissan</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <strong><label for="model">Model</label></strong>
+                        <select id="model">
+                            <option value="March" selected>March</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <strong><label for="year">Year</label></strong>
+                        <input type="number" id="year" value="2020" min="1900" max="2024">
+                    </div>
+                </div>
+            </div>
+            </form>
+        
+
+        <!-- Botones para cancelar o solicitar el ride -->
+        <div class="button-container">
+            <a href="#" class="new-ride2-btn right-btn">Cancel</a>
+            <a href="#" class="new-ride2-btn left-btn">Request</a>
         </div>
     </div>
-</nav>
-    <!-- Título principal -->
-    <h2 class="another-style" style="font-size: 50px;">Quesada - Zarcero</h2>
 
-    <!-- Imagen de usuario centrada -->
-    <img src="Images/user.jpg" alt="User" class="centered-logo">
-    <h4 style="font-weight: bold;">Dpereira</h4>
-  
-    <!-- Contenedor principal de la información del ride -->
-    <div class="verRides-container">
-        <form class="reservation-form">
-            <!-- Información de la ruta -->
-            <div class="route">
-                <div class="field">
-                    <strong><label for="departure">Departure from</label></strong>
-                    <input type="text" id="departure" value="Quesada" readonly>
-                </div>
-                <div class="field">
-                    <strong><label for="arrival">Arrive To</label></strong>
-                    <input type="text" id="arrival" value="Zarcero" readonly>
-                </div>
-            </div>
 
-            <!-- Selección de días -->
-            <div class="days">
-                <strong><label>Days:</label></strong> 
-                <div class="day"><input type="checkbox" checked> Mon</div>
-                <div class="day"><input type="checkbox"> Tue</div>
-                <div class="day"><input type="checkbox" checked> Wed</div>
-                <div class="day"><input type="checkbox"> Thu</div>
-                <div class="day"><input type="checkbox"> Fri</div>
-                <div class="day"><input type="checkbox" checked> Sat</div>
-                <div class="day"><input type="checkbox"> Sun</div>
-            </div>
-
-            <!-- Información de tiempo y asientos -->
-            <div class="time-seats">
-                <div class="field">
-                    <strong><label for="time">Time</label></strong>
-                    <input type="time" id="time" value="10:00">
-                </div>
-                <div class="field">
-                    <strong><label for="seats">Seats</label></strong>
-                    <input type="number" id="seats" value="2" min="1">
-                </div>
-                <div class="field">
-                    <strong><label for="fee">Fee</label></strong>
-                    <input type="number" id="fee" value="15" min="0">
-                </div>
-            </div>
-
-            <!-- Información del vehículo -->
-            <div class="vehicle">
-                <div class="field">
-                    <strong><label for="make">Make</label></strong>
-                    <select id="make">
-                        <option value="Nissan" selected>Nissan</option>
-                    </select>
-                </div>
-                <div class="field">
-                    <strong><label for="model">Model</label></strong>
-                    <select id="model">
-                        <option value="March" selected>March</option>
-                    </select>
-                </div>
-                <div class="field">
-                    <strong><label for="year">Year</label></strong>
-                    <input type="number" id="year" value="2020" min="1900" max="2024">
-                </div>
-            </div>          
-        </form>
-    </div>
-
-    <!-- Botones para cancelar o solicitar el ride -->
-    <div class="button-container">
-        <a href="#" class="new-ride2-btn right-btn">Cancel</a>
-        <a href="#" class="new-ride2-btn left-btn">Request</a>
-    </div>
-
-    <!-- Línea horizontal -->
     <hr>
 
-    <!-- Pie de página -->
+
     <footer class="footer">
         <p>
-            <a href="/proyecto2/SearchHome.html" target="_blank">Home</a> | 
-            <a href="/proyecto2/MyRides.html" target="_blank">Rides</a> | 
-            <a href="/proyecto2/Booking.html" target="_blank">Booking</a> | 
-            <a href="/proyecto2/EdditProfile.html" target="_blank">Settings</a> | 
-            <a href="/proyecto2/Login.html" target="_blank">Login</a> | 
+            <a href="/proyecto2/SearchHome.html" target="_blank">Home</a> |
+            <a href="/proyecto2/MyRides.html" target="_blank">Rides</a> |
+            <a href="/proyecto2/Booking.html" target="_blank">Booking</a> |
+            <a href="/proyecto2/EdditProfile.html" target="_blank">Settings</a> |
+            <a href="/proyecto2/Login.html" target="_blank">Login</a> |
             <a href="/proyecto2/Registration/Registro.html" target="_blank">Register</a>
         </p>
         <p>&copy; Aventones.com</p>
     </footer>
 </body>
+
 </html>
