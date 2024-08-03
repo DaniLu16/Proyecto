@@ -217,6 +217,7 @@ body {
     transition: transform 0.2s, box-shadow 0.2s;
     justify-content: space-between;
     justify-content: center;
+    border: none; /* Elimina el borde */
 
 
 
@@ -246,6 +247,7 @@ body {
     /* Transiciones suaves */
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
     /* Agregar sombra */
+    
 
 
 
@@ -312,31 +314,20 @@ body {
 
 /* Estilo del botón New Ride */
 .new-ride2-btn {
-  
     padding: 10px 20px;
-    /* Estilo cuadrado */
     width: var(--button-width);
-    background-color:  dodgerblue;
+    background-color: dodgerblue;
     font-size: 20px;
-    /* Tamaño de la letra */
     text-decoration: none;
-    /* Elimina línea de enlace */
     font-family: Calibri;
     text-align: center;
-    color: rgb(255, 255, 255);
-    display: flex;
-    /* Usar flexbox para alinear elementos */
+    color: #fff;
+    display: block; /* Cambiado a block para asegurar que el botón se muestre correctamente */
     margin: 50px auto;
-    justify-content: center;
-    /* Centrar horizontalmente los elementos */
     transition: transform 0.2s, box-shadow 0.2s;
-    /* Transiciones suaves */
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-    /* Agregar sombra */
-    justify-content: space-between;
-    justify-content: center;
-   
-
+    border: none;
+    cursor: pointer; /* Asegura que el cursor cambie al pasar sobre el botón */
 }
 
 

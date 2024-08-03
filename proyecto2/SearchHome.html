@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Home</title>
+    
 </head>
 
 <body>
@@ -99,6 +100,9 @@
                     <th>Actions</th>
                 </tr>
             </thead>
+            <tbody id="ridesTableBody">
+                <!-- Las filas se agregarán dinámicamente aquí -->
+            </tbody>
             <tbody>
                 <tr>
                     <td data-label="Driver">dpereira</td>
@@ -151,6 +155,30 @@
         <!-- Derechos de autor -->
         <p>&copy; Aventones.com</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableBody = document.getElementById('ridesTableBody');
+            const rides = JSON.parse(localStorage.getItem('rides')) || [];
+
+            rides.forEach(ride => {
+                const row = document.createElement('tr');
+
+                row.innerHTML = `
+                    <td data-label="Driver">${ride.driver}</td>
+                    <td data-label="From">${ride.departure}</td>
+                    <td data-label="To">${ride.arrival}</td>
+                    <td data-label="Seats">${ride.seats}</td>
+                    <td data-label="Car">${ride.make} ${ride.model} ${ride.year}</td>
+                    <td data-label="Fee">$${ride.fee}</td>
+                    <td data-label="Actions"><a href="/proyecto2/VerRide.html">Request</a></td>
+                `;
+
+                tableBody.appendChild(row);
+            });
+        });
+    </script>
+    
 </body>
 
 </html>
