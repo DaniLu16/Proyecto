@@ -1,16 +1,31 @@
 document.getElementById('signUpButton').addEventListener('click', function(event) {
     event.preventDefault();
 
-    const firstName = document.getElementById('FirstName').value;
-    const lastName = document.getElementById('LastName').value;
-    const email = document.getElementById('Email').value;
-    const password = document.getElementById('Password').value;
-    const repeatPassword = document.getElementById('RepeatPassword').value;
-    const address = document.getElementById('Address').value;
-    const country = document.getElementById('Country').value;
-    const state = document.getElementById('State').value;
-    const city = document.getElementById('City').value;
-    const phoneNumber = document.getElementById('PhoneNumber').value;
+    const getElementValue = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            return element.value;
+        } else {
+            console.error(`Element with ID ${id} not found`);
+            return null;
+        }
+    };
+
+    const firstName = getElementValue('FirstName');
+    const lastName = getElementValue('LastName');
+    const email = getElementValue('Email');
+    const password = getElementValue('Password');
+    const repeatPassword = getElementValue('RepeatPassword');
+    const address = getElementValue('Address');
+    const country = getElementValue('Country');
+    const state = getElementValue('State');
+    const city = getElementValue('City');
+    const phoneNumber = getElementValue('PhoneNumber');
+
+    if ([firstName, lastName, email, password, repeatPassword, address, country, state, city, phoneNumber].includes(null)) {
+        alert('Please fill out all fields correctly.');
+        return;
+    }
 
     if (password !== repeatPassword) {
         alert('Passwords do not match!');

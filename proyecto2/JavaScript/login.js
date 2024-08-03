@@ -13,7 +13,7 @@ function loginUser(event) {
 
     // Validar las credenciales del usuario
     const userFound = storedUsers.some(user => user.email === username && user.password === password);
-    const driverFound = storedDrivers.some(driver => driver.email === username && driver.password === password); // Aquí se puede usar la cédula como contraseña para simplificar
+    const driverFound = storedDrivers.some(driver => driver.email === username && driver.password === password); 
 
     if (userFound || driverFound) {
         alert('Login successful!');
