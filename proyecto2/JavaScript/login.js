@@ -1,4 +1,6 @@
-document.getElementById('loginButton').addEventListener('click', loginUser);
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('loginButton').addEventListener('click', loginUser);
+});
 
 function loginUser(event) {
     event.preventDefault(); // Prevenir la acción por defecto del botón

@@ -10,62 +10,41 @@
 </head>
 
 <body>
-    <div id="ride" class="hoja-container">
-
+    <div id="edit-ride" class="hoja-container">
+        <!-- Imagen del logo centrada -->
         <div class="logo-section">
             <img src="Images/logo.jpg" alt="logo">
             <h1>AVENTONES</h1>
         </div>
-        <!-- Barra de navegación -->
-        <nav class="navbar">
-            <!-- Enlaces de navegación -->
-            <a href="/proyecto2/SearchHome.html" class="nav-link">Home</a>
-            <a href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
-            <a href="/proyecto2/Booking.html" class="nav-link">Booking</a>
-            <!-- Campo de búsqueda -->
-            <input type="text" class="search-input" placeholder="Search...">
-
-            <!-- Icono de perfil con un menú desplegable -->
-            <div class="icon-wrapper" tabindex="0">
-                <i class="fas fa-user" id="profile-icon"></i>
-                <div class="dropdown-menu">
-                    <a href="/proyecto2/EdditProfile.html" class="dropdown-item">Settings</a>
-                    <a href="/proyecto2/Login.html" class="dropdown-item">Logout</a>
-                </div>
-            </div>
-        </nav>
-
-       <h5>Edit Ride</h5>
         
-
-        <!-- Contenedor principal para el formulario de edición de viaje -->
-        <div class="home-container">
-            <form action="#" method="POST">
-                <!-- Fila del formulario con dos campos: Salida y Llegada -->
+        <!-- Formulario para editar un viaje -->
+        <h5>Edit Ride</h5>
+        <form id="editRideForm">
+            <div class="home-container">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="departure">Departure from</label>
-                        <input type="text" id="departure" name="departure" value="New York" required>
+                        <input type="text" id="departure" name="departure" required>
                     </div>
                     <div class="form-group">
                         <label for="arrival">Arrive To</label>
-                        <input type="text" id="arrival" name="arrival" value="Boston" required>
+                        <input type="text" id="arrival" name="arrival" required>
                     </div>
                 </div>
-                <!-- Fila del formulario con los días de la semana y la hora -->
                 <div class="form-row">
                     <div class="form-group">
                         <label>Days</label>
                         <div class="checkbox-group">
-                            <input type="checkbox" id="mon" name="days" value="mon" checked>
+                            <!-- Repetir para todos los días -->
+                            <input type="checkbox" id="mon" name="days" value="mon">
                             <label for="mon">Mon</label>
-                            <input type="checkbox" id="tue" name="days" value="tue" checked>
+                            <input type="checkbox" id="tue" name="days" value="tue">
                             <label for="tue">Tue</label>
-                            <input type="checkbox" id="wed" name="days" value="wed" checked>
+                            <input type="checkbox" id="wed" name="days" value="wed">
                             <label for="wed">Wed</label>
-                            <input type="checkbox" id="thu" name="days" value="thu" checked>
+                            <input type="checkbox" id="thu" name="days" value="thu">
                             <label for="thu">Thu</label>
-                            <input type="checkbox" id="fri" name="days" value="fri" checked>
+                            <input type="checkbox" id="fri" name="days" value="fri">
                             <label for="fri">Fri</label>
                             <input type="checkbox" id="sat" name="days" value="sat">
                             <label for="sat">Sat</label>
@@ -75,67 +54,123 @@
                     </div>
                     <div class="form-group">
                         <label for="time">Time</label>
-                        <input type="time" id="time" name="time" value="08:00" required>
+                        <input type="time" id="time" name="time" required>
                     </div>
                 </div>
-                <!-- Fila del formulario con los campos: Asientos y Tarifa -->
                 <div class="form-row">
                     <div class="form-group">
                         <label for="seats">Seats</label>
-                        <input type="number" id="seats" name="seats" value="4" min="1" max="10" required>
+                        <input type="number" id="seats" name="seats" min="1" max="10" required>
                     </div>
                     <div class="form-group">
                         <label for="fee">Fee</label>
-                        <input type="number" id="fee" name="fee" value="50" min="0" required>
+                        <input type="number" id="fee" name="fee" min="0" required>
                     </div>
                 </div>
-                <label class="custom-label">Vehicle Details</label>
-                <div class="car-info-box">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="make">Make</label>
-                            <select id="make" name="make" required>
-                                <option value="">Select Make</option>
-                                <option value="nissan" selected>Nissan</option>
-                                <option value="toyota">Toyota</option>
-                                <option value="honda">Honda</option>
-                                <option value="ford">Ford</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="model">Model</label>
-                            <input type="text" id="model" name="model" value="Altima" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="year">Year</label>
-                            <input type="number" id="year" name="year" value="2020" min="1900" max="2024" required>
-                        </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="make">Make</label>
+                        <select id="make" name="make" required>
+                            <option value="">Select Make</option>
+                            <option value="nissan">Nissan</option>
+                            <option value="toyota">Toyota</option>
+                            <option value="honda">Honda</option>
+                            <option value="ford">Ford</option>
+                            <option value="chevrolet">Chevrolet</option>
+                            <option value="bmw">BMW</option>
+                            <option value="mercedes-benz">Mercedes-Benz</option>
+                            <option value="audi">Audi</option>
+                            <option value="volkswagen">Volkswagen</option>
+                            <option value="hyundai">Hyundai</option>
+                            <option value="kia">Kia</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model</label>
+                        <input type="text" id="model" name="model" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="number" id="year" name="year" min="1900" max="2024" required>
                     </div>
                 </div>
-            </form>
-        </div>
-
-        <!-- Botones de Cancelar y Guardar -->
-        <div class="button-container">
-            <a href="#" class="new-ride2-btn left-btn">Cancel</a>
-            <a href="/proyecto2/AddRides.html" class="new-ride2-btn right-btn">Save</a>
-        </div>
+                <div class="button-container">
+                    <button id="saveButton" class="new-ride2-btn left-btn" type="submit">Save</button>
+                </div>
+            </div>
+        </form>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el índice del viaje desde la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const index = urlParams.get('index');
 
-    <hr>
+            // Obtener los datos del localStorage
+            const rides = JSON.parse(localStorage.getItem('rides')) || [];
 
-    <!-- Pie de página con enlaces de navegación -->
-    <footer class="footer">
-        <p>
-            <a href="/proyecto2/SearchHome.html" target="_blank">Home</a> |
-            <a href="/proyecto2/MyRides.html" target="_blank">Rides</a> |
-            <a href="/proyecto2/Booking.html" target="_blank">Booking</a> |
-            <a href="/proyecto2/EdditProfile.html" target="_blank">Settings</a> |
-            <a href="/proyecto2/Login.html" target="_blank">Login</a> |
-            <a href="/proyecto2/Registration/Registro.html" target="_blank">Register</a>
-        </p>
-        <p>&copy; Aventones.com</p>
-    </footer>
+            // Rellenar el formulario con los datos del viaje a editar
+            if (index !== null && rides[index]) {
+                const ride = rides[index];
+                
+                document.getElementById('departure').value = ride.departure;
+                document.getElementById('arrival').value = ride.arrival;
+                document.getElementById('time').value = ride.time;
+                document.getElementById('seats').value = ride.seats;
+                document.getElementById('fee').value = ride.fee;
+                document.getElementById('make').value = ride.make;
+                document.getElementById('model').value = ride.model;
+                document.getElementById('year').value = ride.year;
+
+                // Marcar los días seleccionados
+                document.querySelectorAll('input[name="days"]').forEach(checkbox => {
+                    checkbox.checked = ride.days.includes(checkbox.value);
+                });
+            }
+
+            // Manejar el envío del formulario
+            document.getElementById('editRideForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                
+                // Obtener los valores del formulario
+                const departure = document.getElementById('departure').value;
+                const arrival = document.getElementById('arrival').value;
+                const time = document.getElementById('time').value;
+                const seats = document.getElementById('seats').value;
+                const fee = document.getElementById('fee').value;
+                const make = document.getElementById('make').value;
+                const model = document.getElementById('model').value;
+                const year = document.getElementById('year').value;
+
+                // Obtener los días seleccionados
+                const days = [];
+                document.querySelectorAll('input[name="days"]:checked').forEach(checkbox => {
+                    days.push(checkbox.value);
+                });
+
+                // Crear un objeto con los valores del formulario
+                const updatedRide = {
+                    departure,
+                    arrival,
+                    days,
+                    time,
+                    seats,
+                    fee,
+                    make,
+                    model,
+                    year
+                };
+
+                // Actualizar el array de viajes en localStorage
+                const rides = JSON.parse(localStorage.getItem('rides')) || [];
+                rides[index] = updatedRide;
+                localStorage.setItem('rides', JSON.stringify(rides));
+
+                alert('Ride updated successfully!');
+                window.location.href = '/proyecto2/MyRides.html';
+            });
+        });
+    </script>
 </body>
 
 </html>

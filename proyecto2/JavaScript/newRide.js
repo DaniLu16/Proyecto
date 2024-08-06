@@ -33,5 +33,5 @@ document.getElementById('saveButton').addEventListener('click', function (event)
     localStorage.setItem('rides', JSON.stringify(rides));
 
     alert('Registration Successful!');
-    window.location.href = '/Proyecto2/SearchHome.html';
+    window.location.href = '/proyecto2/MyRides.html';
 });
