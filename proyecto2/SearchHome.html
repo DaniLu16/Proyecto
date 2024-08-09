@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Home</title>
-    
 </head>
 
 <body>
@@ -21,7 +20,7 @@
         <nav class="navbar">
             <!-- Enlaces de navegación -->
             <a href="/proyecto2/SearchHome.html" class="nav-link">Home</a>
-            <a href="/proyecto2/MyRides.html"  class="nav-link">Rides</a>
+            <a href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
             <a href="/proyecto2/Booking.html" class="nav-link">Booking</a>
             <input type="text" class="search-input" placeholder="Search...">
 
@@ -34,6 +33,7 @@
                 </div>
             </div>
         </nav>
+
         <h5>Search Rides</h5>
         <div id="home" class="info-box">
             <!-- Formulario de búsqueda de rides -->
@@ -42,10 +42,12 @@
                     <label for="from">From</label>
                     <select id="from" name="from" required>
                         <option value="">Select Origin</option>
-                        <option value="ciudad quesda">Ciudad Quesada</option>
+                        <option value="ciudad quesada">Ciudad Quesada</option>
                         <option value="venecia">Venecia</option>
                         <option value="zarcero">Zarcero</option>
                         <option value="rio cuarto">Rio Cuarto</option>
+                        <option value="pital">Pital</option>
+                        <option value="aguas zarcas">Aguas Zarcas</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -53,12 +55,15 @@
                     <select id="to" name="to" required>
                         <option value="">Select Destination</option>
                         <option value="rio cuarto">Rio Cuarto</option>
-                        <option value="ciudad quesda">Ciudad Quesada</option>
+                        <option value="ciudad quesada">Ciudad Quesada</option>
                         <option value="venecia">Venecia</option>
                         <option value="zarcero">Zarcero</option>
+                        <option value="pital">Pital</option>
+                        <option value="aguas zarcas">Aguas Zarcas</option>
                     </select>
                 </div>
             </div>
+
             <!-- Sección de selección de días -->
             <div class="form-group">
                 <label>Days</label>
@@ -79,13 +84,10 @@
                     <label for="sun">Sun</label>
                 </div>
             </div>
-            <!-- Botón para buscar rides -->
-            <a href="/proyecto2/Booking.html" id="btn" class="buttonLogin">Find Rides </a>
-        </div>
 
-        <!-- Texto informativo de rides encontrados -->
-        <p><strong>Rides found from <span style="font-weight: normal;">Ciudad Quesada</span> to <span
-                    style="font-weight: normal;">Rio Cuarto</span></strong></p>
+            <!-- Botón para buscar rides -->
+            <button id="btn" class="buttonLogin">Find Rides</button>
+        </div>
 
         <!-- Tabla de rides -->
         <table class="rides-table">
@@ -103,37 +105,9 @@
             <tbody id="ridesTableBody">
                 <!-- Las filas se agregarán dinámicamente aquí -->
             </tbody>
-            <tbody>
-                <tr>
-                    <td data-label="Driver">dpereira</td>
-                    <td data-label="From">Rio Cuarto</td>
-                    <td data-label="To">Alajuela</td>
-                    <td data-label="Seats">2</td>
-                    <td data-label="Car">Nissan 2019</td>
-                    <td data-label="Fee">$5</td>
-                    <td data-label="Actions"><a href="/proyecto2/VerRide.html">Request</a></td>
-                </tr>
-                <tr>
-                    <td data-label="Driver">lgomez</td>
-                    <td data-label="From">Rio Cuarto</td>
-                    <td data-label="To">Alajuela</td>
-                    <td data-label="Seats">5</td>
-                    <td data-label="Car">Jeep 2024</td>
-                    <td data-label="Fee">$7</td>
-                    <td data-label="Actions"><a href="/proyecto2/VerRide.html">Request</a></td>
-                </tr>
-                <tr>
-                    <td data-label="Driver">jMaria</td>
-                    <td data-label="From">Ciudad Quesada</td>
-                    <td data-label="To">San Jose</td>
-                    <td data-label="Seats">4</td>
-                    <td data-label="Car">Nissan 2018</td>
-                    <td data-label="Fee">$--</td>
-                    <td data-label="Actions"><a href="/proyecto2/VerRide.html">Request</a></td>
-                </tr>
-            </tbody>
         </table>
 
+        <!-- Mapa de Google -->
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1387.7843482079643!2d-84.43550286022493!3d10.322115798051954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scr!4v1721142673249!5m2!1ses!2scr"
             class="centered-large map" allowfullscreen="" loading="lazy"
@@ -141,7 +115,7 @@
     </div>
 
     <!-- Pie de página -->
-     <hr>
+    <hr>
     <footer class="footer">
         <p>
             <!-- Enlaces de navegación en el pie de página -->
@@ -156,29 +130,9 @@
         <p>&copy; Aventones.com</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const tableBody = document.getElementById('ridesTableBody');
-            const rides = JSON.parse(localStorage.getItem('rides')) || [];
-
-            rides.forEach(ride => {
-                const row = document.createElement('tr');
-
-                row.innerHTML = `
-                    <td data-label="Driver">${ride.driver}</td>
-                    <td data-label="From">${ride.departure}</td>
-                    <td data-label="To">${ride.arrival}</td>
-                    <td data-label="Seats">${ride.seats}</td>
-                    <td data-label="Car">${ride.make} ${ride.model} ${ride.year}</td>
-                    <td data-label="Fee">$${ride.fee}</td>
-                    <td data-label="Actions"><a href="/proyecto2/VerRide.html">Request</a></td>
-                `;
-
-                tableBody.appendChild(row);
-            });
-        });
-    </script>
+   <script src="/proyecto2/JavaScript/Search.js"></script>
     
+
 </body>
 
 </html>
