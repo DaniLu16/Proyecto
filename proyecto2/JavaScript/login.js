@@ -13,14 +13,19 @@ function loginUser(event) {
     const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
     const storedDrivers = JSON.parse(localStorage.getItem('drivers')) || [];
 
-    // Validar las credenciales del usuario
-    const userFound = storedUsers.some(user => user.email === username && user.password === password);
-    const driverFound = storedDrivers.some(driver => driver.email === username && driver.password === password); 
+    // Buscar el usuario o conductor en los datos almacenados
+    const currentUser = storedUsers.find(user => user.email === username && user.password === password);
+    const currentDriver = storedDrivers.find(driver => driver.email === username && driver.password === password);
 
-    if (userFound || driverFound) {
+    // Si se encuentra el usuario o conductor, almacenar en localStorage y redirigir
+    if (currentUser) {
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
         alert('Login successful!');
-        // Redirigir a la página de viajes
-        window.location.href = '/proyecto2/MyRides.html';
+        window.location.href = '/proyecto2/MyRides.html'; // Redirigir a la página de viajes
+    } else if (currentDriver) {
+        localStorage.setItem('currentUser', JSON.stringify(currentDriver));
+        alert('Login successful!');
+        window.location.href = '/proyecto2/MyRides.html'; // Redirigir a la página de viajes
     } else {
         alert('Invalid username or password.');
     }
