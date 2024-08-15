@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('loginButton').addEventListener('click', loginUser);
+   
 });
 
 function loginUser(event) {
@@ -21,12 +22,29 @@ function loginUser(event) {
     if (currentUser) {
         localStorage.setItem('currentUser', JSON.stringify(currentUser));
         alert('Login successful!');
-        window.location.href = '/proyecto2/MyRides.html'; // Redirigir a la página de viajes
+        hideRidesLink(); // Llama a la función para ocultar el enlace de "Rides" al cargar la página
+        window.location.href = '/proyecto2/SearchHome.html'; // Redirigir a la página de viajes
+        
     } else if (currentDriver) {
         localStorage.setItem('currentUser', JSON.stringify(currentDriver));
         alert('Login successful!');
         window.location.href = '/proyecto2/MyRides.html'; // Redirigir a la página de viajes
     } else {
         alert('Invalid username or password.');
+    }
+}
+
+function hideRidesLink() {
+    // Obtén el usuario actual de localStorage
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    // Obtén el enlace de "Rides"
+    const ridesLink = document.getElementById('ridesLink');
+
+    // Si el usuario es de tipo 'user', oculta el enlace de "Rides"
+    if (currentUser && currentUser.type === 'user') {
+        if (ridesLink) {
+            ridesLink.style.display = 'none';
+        }
     }
 }
