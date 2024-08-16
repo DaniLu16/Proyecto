@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+   
     const currentDriverName = currentUser ? `${currentUser.firstName} ${currentUser.lastName}` : 'Unknown Driver';
 
     function searchRides() {
@@ -48,4 +50,18 @@ document.addEventListener('DOMContentLoaded', function () {
         searchRides();
     });
 
+    updateNavbar();
 });
+
+function updateNavbar() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser) {
+        // Si el usuario actual es de tipo 'user', ocultar el enlace 'Rides'
+        if (currentUser.type === 'user') {
+            const ridesLink = document.getElementById('ridesLink');
+            if (ridesLink) {
+                ridesLink.style.display = 'none';
+            }
+        }
+    }
+}

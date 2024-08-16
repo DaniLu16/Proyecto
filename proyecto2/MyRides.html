@@ -20,7 +20,7 @@
         <nav class="navbar">
                 <!-- Enlaces de navegación -->
                 <a href="/proyecto2/SearchHome.html" class="nav-link">Home</a>
-                <a href="/proyecto2/MyRides.html" class="nav-link" >Rides</a>
+                <a id="ridesLink" href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
                 <a href="/proyecto2/Booking.html" class="nav-link">Booking</a>
                 <input type="text" class="search-input" placeholder="Search...">
 
@@ -29,8 +29,7 @@
                 <i class="fas fa-user" id="profile-icon"></i>
                 <div class="dropdown-menu">
                     <a href="/proyecto2/InfoUsuario.html" class="dropdown-item">Settings</a>
-                    <a href="/Proyecto1/Login.html" class="dropdown-item">Logout</a>
-                </div>
+                    <a href="/proyecto2/Login.html" class="dropdown-item">Logout</a>
             </div>
         </nav>
         <h5>My Rides</h5>
@@ -73,6 +72,7 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+
             // Obtener los datos del localStorage
             const rides = JSON.parse(localStorage.getItem('rides')) || [];
             
@@ -122,6 +122,22 @@
                 // Recargar la página para actualizar la tabla
                 window.location.reload();
             }
+
+            function updateNavbar() {
+                const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+              
+                if (currentUser) {
+                    // Si el usuario actual es de tipo 'user', ocultar el enlace 'Rides'
+                    if (currentUser.type === 'user') {
+                        const ridesLink = document.getElementById('ridesLink');
+                        if (ridesLink) {
+                            ridesLink.style.display = 'none';
+                        }
+                    }
+                }
+            }
+
+            updateNavbar();
         });
     </script>
 </body>

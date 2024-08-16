@@ -19,6 +19,7 @@ document.getElementById('signUpButton').addEventListener('click', function(event
     }
 
     const driver = {
+        type: 'driver',
         firstName,
         lastName,
         cedula,

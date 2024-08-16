@@ -19,7 +19,7 @@
         <!-- Barra de navegación -->
         <nav class="navbar">
             <a href="/proyecto2/SearchHome.html" class="nav-link">Home</a>
-            <a href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
+            <a id="ridesLink" href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
             <a href="/proyecto2/Booking.html" class="nav-link">Booking</a>
             <input type="text" class="search-input" placeholder="Search...">
 
@@ -109,7 +109,28 @@
             alert(`Viaje ${index} rechazado`);
         }
     });
-});
+
+
+
+    function updateNavbar() {
+                const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+               
+                if (currentUser) {
+                    // Si el usuario actual es de tipo 'user', ocultar el enlace 'Rides'
+                    if (currentUser.type === 'user') {
+                        const ridesLink = document.getElementById('ridesLink');
+                        if (ridesLink) {
+                            ridesLink.style.display = 'none';
+                        }
+                    }
+                }
+            }
+
+            updateNavbar();
+        });
+
+
+
 
     </script>
 </body>

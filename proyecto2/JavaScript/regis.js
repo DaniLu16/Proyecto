@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const user = {
+            type: 'user',
             firstName,
             lastName,
             email,

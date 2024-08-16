@@ -855,3 +855,128 @@ footer p a {
     /* Ajusta la altura según tus necesidades */
     border: 0;
 }
+
+
+
+
+
+/* Estilos generales para pantallas pequeñas (móviles) */
+@media only screen and (max-width: 600px) {
+    :root {
+        --default-height: 300px; /* Ajustar altura por defecto para móviles */
+        --hoja-container-height-ride: 800px; /* Ajustar altura específica para el ID ride */
+        --hoja-container-height-regis: 700px; /* Ajustar altura específica para el ID regis */
+        --hoja-container-height-book: 500px;
+        --hoja-container-height-map: 1000px;
+        --ride-info-box-height: 200px;  
+        --button-width: 120px; /* Ajustar ancho del botón para móviles */
+    }
+
+    #regis, #ride, #book, #map {
+        height: auto; /* Permitir que las alturas se ajusten automáticamente */
+    }
+
+    h1 {
+        font-size: 30px; /* Reducir tamaño de fuente para pantallas pequeñas */
+    }
+
+    h5 {
+        font-size: 30px; /* Reducir tamaño de fuente para pantallas pequeñas */
+        margin-top: 30px; /* Ajustar margen superior */
+    }
+
+    h2 {
+        font-size: 24px; /* Reducir tamaño de fuente */
+    }
+
+    h3 {
+        font-size: 18px; /* Reducir tamaño de fuente */
+    }
+
+    h4 {
+        font-size: 24px; /* Reducir tamaño de fuente */
+    }
+
+    p {
+        font-size: 18px; /* Reducir tamaño de fuente */
+    }
+
+    .custom-label {
+        font-size: 20px; /* Ajustar tamaño de fuente */
+    }
+
+    .hoja-container, .home-container, .verRides-container, .container {
+        max-width: 100%; /* Ajustar ancho máximo */
+        padding: 20px; /* Ajustar padding */
+    }
+
+    .info-box {
+        max-height: none; /* Permitir que la altura máxima se ajuste automáticamente */
+    }
+
+    .button-container {
+        flex-direction: column; /* Cambiar dirección de los botones a columna */
+        gap: 20px; /* Ajustar espacio entre botones */
+        margin-top: 20px; /* Ajustar margen superior */
+    }
+
+    .buttonLogin, .buttonSingUp, .buttonGoggle, .new-ride2-btn {
+        width: 100%; /* Ajustar ancho de los botones para pantallas pequeñas */
+    }
+
+    .input input {
+        width: 100%; /* Ajustar ancho de los inputs */
+    }
+
+    .form-row {
+        flex-direction: column; /* Cambiar dirección de fila a columna */
+    }
+
+    .form-row .form-group {
+        margin-right: 0; /* Eliminar margen derecho */
+        margin-bottom: 15px; /* Ajustar margen inferior */
+    }
+
+    .navbar {
+        flex-direction: column;
+        /* Cambia la dirección del flexbox a columna */
+        align-items: center;
+        /* Centra los elementos horizontalmente */
+        padding: 10px;
+        /* Ajusta el padding para dispositivos móviles */
+    }
+
+    .search-input {
+        width: 100%; /* Ajustar ancho del campo de búsqueda */
+        margin-left: 0; /* Eliminar margen izquierdo */
+    }
+
+    .header {
+        flex-direction: column; /* Cambiar dirección del encabezado a columna */
+        align-items: center; /* Centrar elementos verticalmente */
+    }
+
+    .user img {
+        width: 40px; /* Reducir tamaño de la imagen del usuario */
+        height: 40px;
+    }
+}
+
+/* Estilos para las tablas en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .rides-table {
+        width: 100%;
+        /* Asegura que la tabla ocupe todo el ancho disponible */
+        overflow-x: auto;
+        /* Permite desplazamiento horizontal */
+        display: block;
+        /* Muestra la tabla como bloque para permitir el desplazamiento */
+    }
+
+    .rides-table th, .rides-table td {
+        font-size: 16px;
+        /* Reduce el tamaño de la fuente para una mejor visualización en móviles */
+        padding: 10px;
+        /* Ajusta el padding de las celdas */
+    }
+}
