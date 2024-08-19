@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <title>Booking</title>
 </head>
-
 <body>
     <div id="book" class="hoja-container">
         <div class="logo-section">
@@ -40,6 +38,7 @@
                     <tr>
                         <th>User</th>
                         <th>Ride</th>
+                        <th>Status</th>
                         <th>Accept/Reject</th>
                     </tr>
                 </thead>
@@ -64,75 +63,86 @@
     </footer>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-    // Obtener el usuario actual del localStorage
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    
-    // Verificar si el usuario ha iniciado sesión
-    if (!currentUser) {
-        alert('Por favor, inicie sesión primero.');
-        window.location.href = '/proyecto2/Login.html'; // Redirigir a la página de inicio de sesión si no hay usuario
-        return;
-    }
-
-    // Obtener los datos de los viajes desde el localStorage
-    const rides = JSON.parse(localStorage.getItem('rides')) || [];
-    const bookingsTable = document.querySelector('.rides-table tbody');
-
-    // Limpiar la tabla
-    bookingsTable.innerHTML = '';
-
-    // Iterar sobre los viajes y mostrarlos en la tabla
-    rides.forEach((ride, index) => {
-        const row = document.createElement('tr');
-
-        // Agregar el nombre del usuario que creó el viaje
-        row.innerHTML = `
-            <td data-label="User">${ride.username || currentUser.name}</td> <!-- Aquí mostramos el nombre del usuario -->
-            <td data-label="Ride">${ride.departure} - ${ride.arrival}</td>
-            <td data-label="Accept/Reject">
-                <a href="#" class="accept-btn" data-index="${index}">Accept</a> | 
-                <a href="#" class="reject-btn" data-index="${index}">Reject</a>
-            </td>
-        `;
-
-        bookingsTable.appendChild(row);
-    });
-
-    // Manejar la aceptación o rechazo de un viaje
-    bookingsTable.addEventListener('click', function (event) {
-        if (event.target.classList.contains('accept-btn')) {
-            const index = event.target.getAttribute('data-index');
-            alert(`Viaje ${index} aceptado`);
-        } else if (event.target.classList.contains('reject-btn')) {
-            const index = event.target.getAttribute('data-index');
-            alert(`Viaje ${index} rechazado`);
-        }
-    });
-
-
-
-    function updateNavbar() {
-                const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-               
-                if (currentUser) {
-                    // Si el usuario actual es de tipo 'user', ocultar el enlace 'Rides'
-                    if (currentUser.type === 'user') {
-                        const ridesLink = document.getElementById('ridesLink');
-                        if (ridesLink) {
-                            ridesLink.style.display = 'none';
-                        }
-                    }
-                }
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (!currentUser) {
+                alert('Por favor, inicie sesión primero.');
+                window.location.href = '/proyecto2/Login.html';
+                return;
             }
+
+            const bookings = JSON.parse(localStorage.getItem('rides')) || [];
+            const bookingsTable = document.getElementById('bookingsTable');
+
+            bookingsTable.innerHTML = '';
+
+            bookings.forEach((ride, index) => {
+                // Si no tiene estado, se define como 'Pendiente' inicialmente
+                if (!ride.status) {
+                    ride.status = 'Pendiente';
+                }
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td data-label="User">${ride.driverName || 'Desconocido'}</td>
+                    <td data-label="Ride">${ride.departure} - ${ride.arrival}</td>
+                    <td data-label="Status">${ride.status}</td>
+                    <td data-label="Accept/Reject">
+                        <a href="#" class="accept-btn" data-index="${index}">Aceptar</a> | 
+                        <a href="#" class="reject-btn" data-index="${index}">Rechazar</a>
+                    </td>
+                `;
+                bookingsTable.appendChild(row);
+            });
+
+            bookingsTable.addEventListener('click', function (event) {
+                if (event.target.classList.contains('accept-btn')) {
+                    const index = event.target.getAttribute('data-index');
+                    bookings[index].status = 'Aceptado';
+                    alert(`Reserva ${index} aceptada`);
+                    updateTableAndLocalStorage(bookings);
+                } else if (event.target.classList.contains('reject-btn')) {
+                    const index = event.target.getAttribute('data-index');
+                    bookings[index].status = 'Rechazado';
+                    alert(`Reserva ${index} rechazada`);
+                    updateTableAndLocalStorage(bookings);
+                }
+            });
 
             updateNavbar();
         });
 
+        function updateTableAndLocalStorage(bookings) {
+            // Actualizar el localStorage
+            localStorage.setItem('rides', JSON.stringify(bookings));
 
+            // Actualizar la tabla
+            const bookingsTable = document.getElementById('bookingsTable');
+            bookingsTable.innerHTML = '';
+            bookings.forEach((ride, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td data-label="User">${ride.driverName || 'Desconocido'}</td>
+                    <td data-label="Ride">${ride.departure} - ${ride.arrival}</td>
+                    <td data-label="Status">${ride.status}</td>
+                    <td data-label="Accept/Reject">
+                        <a href="#" class="accept-btn" data-index="${index}">Aceptar</a> | 
+                        <a href="#" class="reject-btn" data-index="${index}">Rechazar</a>
+                    </td>
+                `;
+                bookingsTable.appendChild(row);
+            });
+        }
 
-
+        function updateNavbar() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (currentUser && currentUser.type === 'user') {
+                const ridesLink = document.getElementById('ridesLink');
+                if (ridesLink) {
+                    ridesLink.style.display = 'none';
+                }
+            }
+        }
     </script>
 </body>
-
 </html>

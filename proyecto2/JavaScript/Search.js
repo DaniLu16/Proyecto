@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
-   
-    const currentDriverName = currentUser ? `${currentUser.firstName} ${currentUser.lastName}` : 'Unknown Driver';
 
     function searchRides() {
         const from = document.getElementById('from').value.toLowerCase();
@@ -30,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
             filteredRides.forEach(ride => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td data-label="Driver">${currentDriverName}</td>
+                    <td data-label="Driver">${ride.driverName}</td>
                     <td data-label="From">${ride.departure}</td>
                     <td data-label="To">${ride.arrival}</td>
                     <td data-label="Seats">${ride.seats}</td>
@@ -56,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
 function updateNavbar() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (currentUser) {
-        // Si el usuario actual es de tipo 'user', ocultar el enlace 'Rides'
         if (currentUser.type === 'user') {
             const ridesLink = document.getElementById('ridesLink');
             if (ridesLink) {

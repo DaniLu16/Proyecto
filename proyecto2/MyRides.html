@@ -18,11 +18,11 @@
         </div>
         <!-- Barra de navegación -->
         <nav class="navbar">
-                <!-- Enlaces de navegación -->
-                <a href="/proyecto2/SearchHome.html" class="nav-link">Home</a>
-                <a id="ridesLink" href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
-                <a href="/proyecto2/Booking.html" class="nav-link">Booking</a>
-                <input type="text" class="search-input" placeholder="Search...">
+            <!-- Enlaces de navegación -->
+            <a href="/proyecto2/SearchHome.html" class="nav-link">Home</a>
+            <a id="ridesLink" href="/proyecto2/MyRides.html" class="nav-link">Rides</a>
+            <a href="/proyecto2/Booking.html" class="nav-link">Booking</a>
+            <input type="text" class="search-input" placeholder="Search...">
 
             <!-- Icono de perfil con un menú desplegable -->
             <div class="icon-wrapper" tabindex="0">
@@ -30,6 +30,7 @@
                 <div class="dropdown-menu">
                     <a href="/proyecto2/InfoUsuario.html" class="dropdown-item">Settings</a>
                     <a href="/proyecto2/Login.html" class="dropdown-item">Logout</a>
+                </div>
             </div>
         </nav>
         <h5>My Rides</h5>
@@ -72,6 +73,15 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el usuario actual del localStorage
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+            // Verificar si el usuario ha iniciado sesión
+            if (!currentUser) {
+                alert('Por favor, inicie sesión primero.');
+                window.location.href = '/proyecto2/Login.html'; // Redirigir a la página de inicio de sesión si no hay usuario
+                return;
+            }
 
             // Obtener los datos del localStorage
             const rides = JSON.parse(localStorage.getItem('rides')) || [];
@@ -84,22 +94,26 @@
 
             // Iterar sobre los datos de los viajes y agregar filas a la tabla
             rides.forEach((ride, index) => {
-                const row = document.createElement('tr');
+                // Solo mostrar los viajes creados por el usuario actual
+                if (ride.username === currentUser.username) {
+                    const row = document.createElement('tr');
 
-                // Agregar celdas a la fila
-                row.innerHTML = `
-                    <td data-label="From">${ride.departure}</td>
-                    <td data-label="To">${ride.arrival}</td>
-                    <td data-label="Seats">${ride.seats}</td>
-                    <td data-label="Car">${ride.make} ${ride.model}</td>
-                    <td data-label="Free">${ride.fee > 0 ? 'No' : 'Yes'}</td>
-                    <td data-label="Actions">
-                        <a href="/proyecto2/EdditRide.html?index=${index}">Edit</a>| 
-                        <a href="#" class="delete-btn" data-index="${index}">Delete</a>
-                    </td> `
-                    ;
+                    // Agregar celdas a la fila
+                    row.innerHTML = `
+                        <td data-label="From">${ride.departure}</td>
+                        <td data-label="To">${ride.arrival}</td>
+                        <td data-label="Seats">${ride.seats}</td>
+                        <td data-label="Car">${ride.make} ${ride.model}</td>
+                        <td data-label="Free">${ride.fee > 0 ? 'No' : 'Yes'}</td>
+                        <td data-label="Actions">
+                            <a href="/proyecto2/VerRide.html?index=${index}">View</a>| 
+                            <a href="/proyecto2/EdditRide.html?index=${index}">Edit</a>| 
+                            <a href="#" class="delete-btn" data-index="${index}">Delete</a>
+                        </td>
+                    `;
 
-                tbody.appendChild(row);
+                    tbody.appendChild(row);
+                }
             });
 
             // Manejar la eliminación de registros
@@ -124,8 +138,6 @@
             }
 
             function updateNavbar() {
-                const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-              
                 if (currentUser) {
                     // Si el usuario actual es de tipo 'user', ocultar el enlace 'Rides'
                     if (currentUser.type === 'user') {
@@ -133,8 +145,8 @@
                         if (ridesLink) {
                             ridesLink.style.display = 'none';
                         }
-                    }
-                }
+                    }
+                }
             }
 
             updateNavbar();

@@ -1,5 +1,6 @@
 document.getElementById('saveButton').addEventListener('click', function (event) {
     event.preventDefault();
+
     const departure = document.getElementById('departure').value;
     const arrival = document.getElementById('arrival').value;
     const time = document.getElementById('time').value;
@@ -15,8 +16,13 @@ document.getElementById('saveButton').addEventListener('click', function (event)
         days.push(checkbox.value);
     });
 
+    // Obtener el nombre del conductor actual
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const driverName = currentUser ? `${currentUser.firstName} ${currentUser.lastName}` : 'Unknown Driver';
+
     // Crear un objeto con los valores del formulario
     const rideData = {
+        driverName, // Guardar el nombre del conductor
         departure,
         arrival,
         days,
